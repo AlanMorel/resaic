@@ -5,7 +5,7 @@ module.exports = {
     filenameHashing: false,
     pages: {
         index: {
-            entry: "app/src/main.js"
+            entry: "app/main.js"
         }
     },
     configureWebpack: {
@@ -15,6 +15,7 @@ module.exports = {
         }
     },
     chainWebpack: config => {
-        config.resolve.alias.set("@", path.resolve(__dirname, "app/src/"));
+        config.resolve.alias.set("@", path.resolve(__dirname, "app"));
+        config.module.rules.delete("eslint");
     }
 };

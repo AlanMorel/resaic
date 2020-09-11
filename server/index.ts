@@ -25,4 +25,4 @@ staticAssets(app);
 handlebars(app);
 router(app);
 
-console.log(`[server]: Server is running at http://localhost:${PORT}`);
+console.log(`Server is running at http://localhost:${PORT}`);

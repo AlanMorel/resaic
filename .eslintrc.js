@@ -15,7 +15,14 @@ module.exports = {
     rules: {
         "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
         "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-        indent: 2
+        indent: 2,
+        "vue/script-indent": [
+            "error",
+            4,
+            { 
+                "baseIndent": 1
+            }
+        ],
     },
     plugins: ["@typescript-eslint"],
     overrides: [
@@ -26,6 +33,11 @@ module.exports = {
             ],
             env: {
                 jest: true
+            }
+        }, {
+            files: ["*.vue"],
+            rules: {
+                indent: "off"
             }
         }
     ]

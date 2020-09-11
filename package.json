@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build-server": "tsc --project ./",
+    "test:unit": "vue-cli-service test:unit",
     "build-dev": "vue-cli-service build --mode development --dest dist/development --target app --watch",
     "build-prod": "vue-cli-service build --mode production --dest dist/production --target app --modern",
-    "server": "nodemon server/index.ts",
-    "server-static": "npm run build-server && node dist/server/index.js",
-    "test:unit": "vue-cli-service test:unit",
-    "lint-app": "vue-cli-service lint",
+    "build-server": "tsc --project ./",
+    "lint-app": "eslint . --ext .vue",
     "lint-server": "eslint . --ext .ts",
-    "lint-server-fix": "eslint . --ext .ts --fix"
+    "lint-server-fix": "eslint . --ext .ts --fix",
+    "server": "nodemon server/index.ts",
+    "server-static": "npm run build-server && node dist/server/index.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -35,7 +35,7 @@
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "@typescript-eslint/parser": "^4.1.0",
     "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-eslint": "^4.5.6",
     "@vue/cli-plugin-pwa": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-unit-jest": "~4.5.0",
