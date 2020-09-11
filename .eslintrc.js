@@ -3,7 +3,12 @@ module.exports = {
     env: {
         node: true
     },
-    extends: ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"],
+    extends: [
+        "plugin:vue/essential",
+        "eslint:recommended",
+        "@vue/prettier",
+        "plugin:@typescript-eslint/eslint-recommended"
+    ],
     parserOptions: {
         parser: "babel-eslint"
     },
@@ -12,6 +17,7 @@ module.exports = {
         "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
         indent: 2
     },
+    plugins: ["@typescript-eslint"],
     overrides: [
         {
             files: [
