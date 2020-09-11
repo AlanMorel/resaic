@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import cors from "cors";
 import helmet from "helmet";
+import router from "./router";
 
 const app = express();
 app.use(cookieParser());
@@ -16,10 +17,8 @@ app.use(
 
 const PORT = 8000;
 
-app.get("/", (req, res) => {
-    res.send("Hello World!");
-});
-
 app.listen(PORT);
+
+router(app);
 
 console.log(`[server]: Server is running at http://localhost:${PORT}`);
