@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import helmet from "helmet";
 import router from "./router";
+import staticAssets from "./static";
 
 const app = express();
 app.use(cookieParser());
@@ -19,6 +20,7 @@ const PORT = 8000;
 
 app.listen(PORT);
 
+staticAssets(app);
 router(app);
 
 console.log(`[server]: Server is running at http://localhost:${PORT}`);

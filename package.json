@@ -1,9 +1,8 @@
 {
-  "name": "resaic",
+  "name": "resia",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --target app",
     "build-server": "tsc --project ./",
     "build-dev": "vue-cli-service build --mode development --dest dist/development --target app --watch",
     "build-prod": "vue-cli-service build --mode production --dest dist/production --target app --modern",
@@ -11,7 +10,7 @@
     "server-static": "npm run build-server && node dist/server/index.js",
     "test:unit": "vue-cli-service test:unit",
     "lint-app": "vue-cli-service lint",
-    "lint-server": "eslint . --ext .ts --fix"
+    "lint-server": "eslint . --ext .ts"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -29,6 +28,7 @@
   "devDependencies": {
     "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.8",
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "@typescript-eslint/parser": "^4.1.0",
     "@vue/cli-plugin-babel": "~4.5.0",

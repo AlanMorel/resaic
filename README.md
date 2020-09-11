@@ -1,4 +1,4 @@
-# resaic
+# resia
 
 ## Project setup
 ```

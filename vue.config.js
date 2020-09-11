@@ -8,6 +8,12 @@ module.exports = {
             entry: "app/src/main.js"
         }
     },
+    configureWebpack: {
+        output: {
+            filename: "[name].js",
+            chunkFilename: "[name].js"
+        }
+    },
     chainWebpack: config => {
         config.resolve.alias.set("@", path.resolve(__dirname, "app/src/"));
     }
