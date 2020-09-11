@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --target app",
     "build-dev": "vue-cli-service build --mode development --dest dist/development --target app --watch",
     "build-prod": "vue-cli-service build --mode production --dest dist/production --target app --modern",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint --target app"
   },
   "dependencies": {
     "core-js": "^3.6.5",
