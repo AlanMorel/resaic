@@ -1,3 +1,4 @@
+import config from "./config";
 import express from "express";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
@@ -17,12 +18,10 @@ app.use(
     })
 );
 
-const PORT = 8000;
-
-app.listen(PORT);
+app.listen(config.port);
 
 staticAssets(app);
 handlebars(app);
 router(app);
 
-console.log(`Server is running at http://localhost:${PORT}`);
+console.log(`Server is running at http://localhost:${config.port}`);

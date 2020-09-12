@@ -13,12 +13,10 @@ const metaInfo = {
 };
 
 export default (req: Request, res: Response) => {
-    const path = req.path;
-
     res.render("main", {
         layout: false,
         app,
         metaInfo,
-        path
+        path: req.path
     });
 };
