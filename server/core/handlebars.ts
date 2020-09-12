@@ -1,10 +1,10 @@
 import handlebars from "express-handlebars";
 import { Application } from "express";
 
-export default (app: Application) => {
+export default (app: Application): void => {
     const options = {
         helpers: {
-            JSON: (object: Object) => JSON.stringify(object, null, 4)
+            JSON: (object: any) => JSON.stringify(object, null, 4)
         }
     };
 

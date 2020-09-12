@@ -12,7 +12,7 @@ const metaInfo = {
     image: "image"
 };
 
-export default (req: Request, res: Response) => {
+export default (req: Request, res: Response): void => {
     res.render("main", {
         layout: false,
         app,
