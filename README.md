@@ -1,29 +1,42 @@
-# resia
+# Resia
 
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Project scripts
 ```
-npm run serve
-```
+// build app for development
+npm run build-dev
 
-### Compiles and minifies for production
-```
-npm run build
-```
+// build app for production
+npm run build-prod
 
-### Run your unit tests
-```
-npm run test:unit
-```
+// build server
+npm run build-server
 
-### Lints and fixes files
-```
-npm run lint
-```
+// lint app
+npm run lint-app
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+// lint and fix app
+npm run lint-app-fix
+
+// lint server
+npm run lint-server
+
+// lint and fix server
+npm run lint-server-fix
+
+// build server watcher
+npm run server
+
+// build server and run
+npm run server-static
+
+// run tests on app
+npm run test-app
+
+// run tests on server
+npm run test-server
+```
