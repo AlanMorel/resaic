@@ -2,7 +2,7 @@
     <nav class="nav">
         <div class="nav__logo">
             <router-link to="/">
-                Resia
+                <Logo />
             </router-link>
         </div>
         <ul class="nav__menu">
@@ -17,8 +17,13 @@
 </template>
 
 <script>
+    import Logo from "@/components/core/Logo";
+
     export default {
-        name: "Nav"
+        name: "Nav",
+        components: {
+            Logo
+        }
     }
 </script>
 

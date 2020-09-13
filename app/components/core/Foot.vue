@@ -4,7 +4,7 @@
             <div class="footer__left">
                 <div class="footer__logo">
                     <router-link to="/">
-                        Resia
+                        <Logo />
                     </router-link>
                 </div>
             </div>
@@ -25,8 +25,13 @@
 </template>
 
 <script>
+    import Logo from "@/components/core/Logo";
+
     export default {
         name: "Foot",
+        components: {
+            Logo
+        },
         data: () => ({
             footerLinks: [
                 {
