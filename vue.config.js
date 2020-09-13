@@ -5,7 +5,7 @@ module.exports = {
     filenameHashing: false,
     pages: {
         index: {
-            entry: "app/main.js"
+            entry: "app/core/main.js"
         }
     },
     configureWebpack: {

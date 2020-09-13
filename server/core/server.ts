@@ -1,12 +1,12 @@
-import config from "./config";
+import config from "../config";
 import express from "express";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import cors from "cors";
 import helmet from "helmet";
-import staticAssets from "./core/static";
-import handlebars from "./core/handlebars";
-import router from "./core/router";
+import staticAssets from "./static";
+import handlebars from "./handlebars";
+import router from "./router";
 
 const app = express();
 app.use(cookieParser());
