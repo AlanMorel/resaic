@@ -17,7 +17,6 @@
 
 <style lang="stylus">
     .header {
-        background-color: var(--primary-color);
         padding: 0.5rem 0;
     }
 </style>

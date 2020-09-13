@@ -56,6 +56,15 @@
     .footer {
         background-color: var(--primary-color);
         padding: 1rem 0 0.75rem;
+
+        a {
+            color: white;
+
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            }
+        }
     }
 
     .footer__inner {
@@ -66,19 +75,12 @@
     .footer__link {
         font-family: $primary-font;
         margin-bottom: 0.5rem;
-
-        a {
-            &:hover,
-            &:focus {
-                text-decoration: underline;
-            }
-        }
     }
 
     .footer__copyright {
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(255, 255, 255, 0.75);
         text-align: center;
-        font-size: 0.875rem;
+        font-size: 0.75rem;
         font-family: $primary-font;
     }
 </style>

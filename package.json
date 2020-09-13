@@ -16,6 +16,7 @@
     "test-server": "jest --config jest-server.config.js || exit 0"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "core-js": "^3.6.5",

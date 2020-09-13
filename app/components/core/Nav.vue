@@ -54,6 +54,7 @@
         &:hover,
         &:focus {
             background-color: var(--primary-color);
+            color: white;
         }
 
         &:last-of-type {

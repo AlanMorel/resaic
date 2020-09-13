@@ -17,7 +17,7 @@
     }
 
     .logo__text {
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-family: $primary-font;
         letter-spacing: -1.75px;
     }
