@@ -1,7 +1,9 @@
 <template>
     <CenteredPage class="sign-up">
         <template #prompt>
-            <span>Join the fastest growing community of photographers in the world!</span>
+            <span>
+                Join the fastest growing community of photographers in the world!
+            </span>
         </template>
         <template #content>
             <form @submit.prevent="signup">

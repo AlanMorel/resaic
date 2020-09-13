@@ -73,7 +73,7 @@
         }
 
         &--red {
-            background-color: var(--danger-red) 
+            background-color: var(--danger-red)
         }
 
         &--orange {

@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="centered-page__background">
-             <slot name="background" />
+            <slot name="background" />
         </div>
     </section>
 </template>

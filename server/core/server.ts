@@ -7,6 +7,8 @@ import helmet from "helmet";
 import staticAssets from "./static";
 import handlebars from "./handlebars";
 import router from "./router";
+import database from "../database/database";
+import Sequelize from "../database/sequelize";
 
 const app = express();
 app.use(cookieParser());
@@ -21,6 +23,9 @@ app.use(
 staticAssets(app);
 handlebars(app);
 router(app);
+
+database();
+Sequelize.sync();
 
 app.listen(config.port);
 

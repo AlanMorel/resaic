@@ -1,7 +1,9 @@
 <template>
     <CenteredPage class="login">
         <template #prompt>
-            <span>Login to your account</span>
+            <span>
+                Login to your account
+            </span>
         </template>
         <template #content>
             <form @submit.prevent="login">

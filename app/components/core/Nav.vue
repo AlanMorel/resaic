@@ -7,10 +7,14 @@
         </div>
         <ul class="nav__menu">
             <li class="nav__item">
-                <router-link to="/login" class="nav__link">Login</router-link>
+                <router-link to="/login" class="nav__link">
+                    Login
+                </router-link>
             </li>
             <li class="nav__item">
-                <router-link to="/signup" class="nav__link">Sign Up</router-link>
+                <router-link to="/signup" class="nav__link">
+                    Sign Up
+                </router-link>
             </li>
         </ul>
     </nav>
