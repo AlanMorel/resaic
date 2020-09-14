@@ -12,6 +12,8 @@ const metaInfo = {
     image: "image"
 };
 
+// send user data
+
 export default (req: Request, res: Response): void => {
     res.render("main", {
         layout: false,

@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import helmet from "helmet";
 import staticAssets from "./static";
+import passport from "./passport";
 import handlebars from "./handlebars";
 import router from "./router";
 import database from "../database/database";
@@ -21,6 +22,7 @@ app.use(
 );
 
 staticAssets(app);
+passport(app);
 handlebars(app);
 router(app);
 

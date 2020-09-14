@@ -73,7 +73,7 @@
                 axios.post("/api/login", data).then(response => {
                     this.progress = false;
                     if (response.data.success) {
-                        // route to home
+                        this.$router.push({ path: "/" });
                     } else {
                         this.error = response.data.error;
                     }
