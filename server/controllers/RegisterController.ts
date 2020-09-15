@@ -8,7 +8,7 @@ export default async (req: Request, res: Response): Promise<void> => {
         await User.create({
             ...req.body,
             ipAddress: req.ip
-        })
+        });
         success(res);
     } catch (err) {
         if (err.errors && err.errors.length) {
@@ -17,4 +17,4 @@ export default async (req: Request, res: Response): Promise<void> => {
             error(res, "An unknown error occured.");
         }
     }
-}
+};

@@ -1,7 +1,7 @@
 import Passport from "passport";
-import LocalStrategy from 'passport-local';
-import User from '../database/models/User';
-import { Op } from 'sequelize';
+import LocalStrategy from "passport-local";
+import User from "../database/models/User";
+import { Op } from "sequelize";
 import { Application } from "express";
 
 export default (app: Application): void => {
@@ -24,7 +24,7 @@ export default (app: Application): void => {
     });
 
     Passport.use(new LocalStrategy.Strategy({
-        usernameField: 'identifier'
+        usernameField: "identifier"
     },
     async (identifier: string, password: string, done: Function) => {
         const user = await User.findOne({
@@ -38,7 +38,7 @@ export default (app: Application): void => {
         });
 
         if (!user) {
-            return done('Incorrect username or password');
+            return done("Incorrect username or password");
         }
 
         // do password check here
@@ -48,4 +48,4 @@ export default (app: Application): void => {
 
     app.use(Passport.initialize());
     app.use(Passport.session());
-}
+};

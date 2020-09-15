@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import Sequelize from "../sequelize";
 
-const User = Sequelize.define('user', {
+const User = Sequelize.define("user", {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -54,6 +54,6 @@ User.prototype.simplify = function() {
     delete user.createdAt;
     delete user.updatedAt;
     return user;
-}
+};
 
 export default User;

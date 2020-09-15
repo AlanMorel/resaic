@@ -4,9 +4,7 @@ import { Request, Response, NextFunction } from "express";
 
 export default async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const schema = Joi.object({
-        username: Joi.string().alphanum().min(4).required(),
-        email: Joi.string().email().min(5).required(),
-        password: Joi.string().min(8).max(255).required()
+        username: Joi.string().alphanum().required().min(4)
     });
 
     const { error } = schema.validate(req.body);

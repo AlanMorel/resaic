@@ -2,7 +2,7 @@ import Passport from "passport";
 import { Request, Response, NextFunction } from "express";
 import { error } from "../helpers/ControllerHelper";
 
-export default async (req: Request, res: Response, next: NextFunction) => {
+export default async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     Passport.authenticate("local", (err, user, info) => {
         if (err) {
             error(res, err);
@@ -21,6 +21,6 @@ export default async (req: Request, res: Response, next: NextFunction) => {
             }
 
             next();
-        })
+        });
     })(req, res, next);
-}
+};
