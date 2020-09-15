@@ -1,4 +1,5 @@
-import { Request, Response } from "express";
+import { Response } from "express";
+import RequestWithUser from "../database/interfaces";
 
 const app = {
     slug: "resia",
@@ -12,13 +13,22 @@ const metaInfo = {
     image: "image"
 };
 
-// send user data
+export default (req: RequestWithUser, res: Response): void => {
 
-export default (req: Request, res: Response): void => {
+    const user = req.user && req.isAuthenticated() ? req.user.simplify() : null;
+
+    const store = {
+        user: {
+            loggedIn: req.isAuthenticated(),
+            ...user
+        }
+    };
+    
     res.render("main", {
         layout: false,
         app,
         metaInfo,
-        path: req.path
+        path: req.path,
+        store
     });
 };

@@ -46,4 +46,14 @@ const User = Sequelize.define('user', {
     }
 });
 
+User.prototype.simplify = function() {
+    const user = Object.assign({}, this.get());
+    delete user.password;
+    delete user.banned;
+    delete user.ipAddress;
+    delete user.createdAt;
+    delete user.updatedAt;
+    return user;
+}
+
 export default User;

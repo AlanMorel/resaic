@@ -1,9 +1,10 @@
-import { Request, Response } from "express";
+import { Response } from "express";
 import { success, error } from '../helpers/ControllerHelper';
+import RequestWithUser from "../database/interfaces";
 
 const DAY = 1000 * 60 * 60 * 24
 
-export default async (req: Request, res: Response) => {
+export default async (req: RequestWithUser, res: Response) => {
     if (req.body.rememberMe) {
         // req.session.cookie.maxAge = 30 * DAY
     } else {
@@ -21,6 +22,6 @@ export default async (req: Request, res: Response) => {
     }
 
     success(res, {
-        user: req.user
+        user: req.user.simplify()
     });
 }
