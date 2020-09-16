@@ -1,5 +1,6 @@
 import Passport from "passport";
 import LocalStrategy from "passport-local";
+import bcrypt from "bcrypt";
 import User from "../database/models/User";
 import { Op } from "sequelize";
 import { Application } from "express";
@@ -38,10 +39,13 @@ export default (app: Application): void => {
         });
 
         if (!user) {
-            return done("Incorrect username or password");
+            return done("Incorrect username or password.");
         }
-
-        // do password check here
+        
+        const validPassword = await bcrypt.compare(password, user.getDataValue("password"));
+        if (!validPassword) {
+            return done("Incorrect username or password.");
+        }
 
         return done(null, user);
     }));

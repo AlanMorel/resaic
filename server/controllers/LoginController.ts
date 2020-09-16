@@ -5,10 +5,12 @@ import RequestWithUser from "../database/interfaces";
 const DAY = 1000 * 60 * 60 * 24;
 
 export default async (req: RequestWithUser, res: Response): Promise<void> => {
-    if (req.body.rememberMe) {
-        // req.session.cookie.maxAge = 30 * DAY
-    } else {
-        // req.session.cookie.maxAge = 1 * DAY
+    if (req.session) {
+        if (req.body.rememberMe) {
+            req.session.cookie.maxAge = 30 * DAY;
+        } else {
+            req.session.cookie.maxAge = 1 * DAY;
+        }
     }
 
     try {

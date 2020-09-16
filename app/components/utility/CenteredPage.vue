@@ -95,7 +95,7 @@
         font-weight: bold;
         margin: 1rem 0;
         text-align: center;
-        color: $primary-color;
+        color: white;
         background-color: var(--primary-color);
         padding: 0.5rem;
         border-radius: 0.25rem;

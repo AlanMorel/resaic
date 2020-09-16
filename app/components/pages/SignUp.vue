@@ -191,7 +191,7 @@
 
             &:hover,
             &:focus {
-                color: $primary-color;
+                color: var(--primary-color);
             }
         }
     }
