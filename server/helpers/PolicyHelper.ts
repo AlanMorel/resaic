@@ -1,6 +1,6 @@
 import { Response, NextFunction } from "express";
 
-export function reject(res: Response, error: any, status = 200): void {
+export function reject(res: Response, error: string, status = 200): void {
     res.status(status).json({
         success: false,
         error

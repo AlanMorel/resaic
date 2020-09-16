@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import { DataTypes } from "sequelize";
 import Sequelize from "../sequelize";
 
-const hashPassword = async (user: any) => {
+const hashPassword = async (user: any): Promise<void> => {
     user.password = await bcrypt.hash(user.password, 10);
 };
 
@@ -58,7 +58,7 @@ const User = Sequelize.define("user",
     }
 );
 
-User.prototype.simplify = function() {
+User.prototype.simplify = function(): void {
     const user = Object.assign({}, this.get());
     delete user.password;
     delete user.banned;

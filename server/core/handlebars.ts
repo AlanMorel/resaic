@@ -4,7 +4,7 @@ import { Application } from "express";
 export default (app: Application): void => {
     const options = {
         helpers: {
-            JSON: (object: any) => JSON.stringify(object, null, 4)
+            JSON: (object: any): string => JSON.stringify(object, null, 4)
         }
     };
 
