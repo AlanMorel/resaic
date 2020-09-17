@@ -73,6 +73,9 @@
                 axios.post("/api/login", data).then(response => {
                     this.progress = false;
                     if (response.data.success) {
+                        const user = response.data.user;
+                        user.loggedIn = true;
+                        this.$store.dispatch("updateUser", user);
                         this.$router.push({ path: "/" });
                     } else {
                         this.error = response.data.error;

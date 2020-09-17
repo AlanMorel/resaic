@@ -6,27 +6,54 @@
             </router-link>
         </div>
         <ul class="nav__menu">
-            <li class="nav__item">
-                <router-link to="/login" class="nav__link">
-                    Login
-                </router-link>
-            </li>
-            <li class="nav__item">
-                <router-link to="/signup" class="nav__link">
-                    Sign Up
-                </router-link>
-            </li>
+           <template v-if="user.loggedIn">
+                <li class="nav__item">
+                    <span @click="logout" class="nav__link">Log out</span>
+                </li>
+            </template>
+            <template v-else>
+                <li class="nav__item">
+                    <router-link to="/login" class="nav__link">Login</router-link>
+                </li>
+                <li class="nav__item">
+                    <router-link to="/signup" class="nav__link">Sign Up</router-link>
+                </li>
+            </template>
         </ul>
     </nav>
 </template>
 
 <script>
+    import axios from "axios";
+
     import Logo from "@/components/core/Logo";
 
     export default {
         name: "Nav",
         components: {
             Logo
+        },
+        computed: {
+            user() {
+                return this.$store.state.user;
+            }
+        },
+        methods: {
+            logout() {
+                axios.post("/api/logout").then(response => {
+                    if (response.data.success) {
+                        const user = {
+                            loggedIn: false
+                        };
+                        this.$store.dispatch("updateUser", user);
+                    } else {
+                        console.log(response.data.error);
+                    }
+                }).catch(error => {
+                    this.progress = false;
+                    console.log(error);
+                });
+            }
         }
     }
 </script>

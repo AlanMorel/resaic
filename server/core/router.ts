@@ -11,12 +11,16 @@ import LoginControllerPolicy from "../policies/LoginControllerPolicy";
 import CheckUsernameController from "../controllers/CheckUsernameController";
 import CheckUsernameControllerPolicy from "../policies/CheckUsernameControllerPolicy";
 
+import LogoutController from "../controllers/LogoutController";
+
 export default (app: Application): void => {
     app.post("/api/register", RegisterControllerPolicy, RegisterController);
     
     app.post("/api/login", LoginControllerPolicy, LoginController);
 
     app.post("/api/check-username", CheckUsernameControllerPolicy, CheckUsernameController);
+
+    app.post("/api/logout", LogoutController);
 
     app.get("*", MainController);
 };
