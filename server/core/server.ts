@@ -9,8 +9,7 @@ import staticAssets from "./static";
 import passport from "./passport";
 import handlebars from "./handlebars";
 import router from "./router";
-import database from "../database/database";
-import Sequelize from "../database/sequelize";
+import Database from "../database/database";
 
 const app = express();
 app.use(cookieParser());
@@ -34,8 +33,7 @@ passport(app);
 handlebars(app);
 router(app);
 
-database();
-Sequelize.sync();
+Database.sync();
 
 app.listen(config.port);
 

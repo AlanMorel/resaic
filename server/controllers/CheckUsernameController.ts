@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { error, success } from "../helpers/ControllerHelper";
-
-import User from "../database/models/User";
+import { User } from "../database/database";
 
 export default async (req: Request, res: Response): Promise<void> => {
     try {
@@ -17,6 +16,10 @@ export default async (req: Request, res: Response): Promise<void> => {
             success(res);
         }
     } catch (err) {
-        error(res, "An unknown error occured.");
+        if (err.errors && err.errors.length) {
+            error(res, err.errors[0].message);
+        } else {
+            error(res, "An unknown error occured.");
+        }
     }
 };

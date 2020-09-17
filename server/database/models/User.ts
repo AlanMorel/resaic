@@ -1,17 +1,34 @@
-import bcrypt from "bcrypt";
-import { DataTypes } from "sequelize";
-import Sequelize from "../sequelize";
+import { BuildOptions, Model, DataTypes, Sequelize } from "sequelize";
 
-const hashPassword = async (user: any): Promise<void> => {
-    user.password = await bcrypt.hash(user.password, 10);
+export interface UserAttributes {
+    id: number;
+    username: string;
+    email: string;
+    password: string;
+    ipAddress: string;
+    banned: boolean;
+    lastLoggedIn: Date;
+    country: string;
+    city: string;
+    bio: string;
+    createdAt?: Date;
+    updatedAt?: Date;
+}
+
+export interface UserModel extends Model<UserAttributes>, UserAttributes {
+
+}
+
+export type UserType = typeof Model & {
+   new (values?: any, options?: BuildOptions): UserModel;
 };
 
-const User = Sequelize.define("user", 
-    {
+export function UserFactory (sequelize: Sequelize): UserType {
+    const user = <UserType> sequelize.define("users", {
         id: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            primaryKey: true
         },
         username: {
             type: DataTypes.STRING,
@@ -19,8 +36,8 @@ const User = Sequelize.define("user",
         },
         email: {
             type: DataTypes.STRING,
-            unique: true,
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
         password: {
             type: DataTypes.STRING,
@@ -49,23 +66,28 @@ const User = Sequelize.define("user",
         bio: {
             type: DataTypes.TEXT,
             allowNull: true
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW
         }
-    }, 
-    {
-        hooks: {
-            beforeCreate: hashPassword
-        }
-    }
-);
+    });
 
-User.prototype.simplify = function(): void {
-    const user = Object.assign({}, this.get());
-    delete user.password;
-    delete user.banned;
-    delete user.ipAddress;
-    delete user.createdAt;
-    delete user.updatedAt;
+    user.prototype.simplify = function(): void {
+        const user = Object.assign({}, this.get());
+        delete user.password;
+        delete user.banned;
+        delete user.ipAddress;
+        delete user.createdAt;
+        delete user.updatedAt;
+        return user;
+    };
+
     return user;
-};
-
-export default User;
+}

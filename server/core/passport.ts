@@ -1,12 +1,13 @@
 import Passport from "passport";
 import LocalStrategy from "passport-local";
 import bcrypt from "bcrypt";
-import User from "../database/models/User";
+import { User } from "../database/database";
+import { UserModel } from "../database/models/User";
 import { Op } from "sequelize";
 import { Application } from "express";
 
 export default (app: Application): void => {
-    Passport.serializeUser((user: any, done: Function) => {
+    Passport.serializeUser((user: UserModel, done: Function) => {
         done(null, user.id);
     });
 
@@ -42,7 +43,7 @@ export default (app: Application): void => {
             return done("Incorrect username or password.");
         }
         
-        const validPassword = await bcrypt.compare(password, user.getDataValue("password"));
+        const validPassword = await bcrypt.compare(password, user.password);
         if (!validPassword) {
             return done("Incorrect username or password.");
         }

@@ -1,4 +1,19 @@
-import User from "./models/user";
-import { ModelCtor, Model } from "sequelize";
+import { Sequelize } from "sequelize";
+import { UserFactory } from "./models/User";
 
-export default (): Array<ModelCtor<Model<any, any>>> => [ User ];
+const Database = new Sequelize({
+    host: "localhost",
+    username: "root",
+    password: "",
+    database: "resia",
+    dialect: "mysql",
+    pool: {
+        max: 5,
+        min: 0,
+        idle: 10000
+    }
+});
+
+export const User = UserFactory(Database);
+
+export default Database;
