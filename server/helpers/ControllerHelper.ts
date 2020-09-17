@@ -13,3 +13,11 @@ export function error(res: Response, error: string, status = 200): void {
         error
     });
 }
+
+export function exception(res: Response, err: any): void {
+    if (err.errors && err.errors.length) {
+        error(res, err.errors[0].message);
+    } else {
+        error(res, "An unknown error occured.");
+    }
+}
