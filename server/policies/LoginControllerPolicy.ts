@@ -1,27 +1,26 @@
 import Passport from "passport";
 import { Request, Response, NextFunction } from "express";
-import { error } from "../helpers/ControllerHelper";
+import { accept, reject } from "../helpers/PolicyHelper";
 import { UserModel } from "../database/models/User";
 
 export default async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     Passport.authenticate("local", (err, user: UserModel, info) => {
         if (err) {
-            error(res, err);
+            reject(res, err);
             return;
         }
 
         if (!user) {
-            error(res, info.message);
+            reject(res, info.message);
             return;
         }
 
         req.logIn(user, err => {
             if (err) {
-                error(res, err);
-                return;
+                reject(res, err);
+            } else {
+                accept(next);
             }
-
-            next();
         });
     })(req, res, next);
 };

@@ -24,7 +24,7 @@ export type UserType = typeof Model & {
 };
 
 export function UserFactory (sequelize: Sequelize): UserType {
-    const user = <UserType> sequelize.define("users", {
+    const User = <UserType> sequelize.define("users", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -79,7 +79,7 @@ export function UserFactory (sequelize: Sequelize): UserType {
         }
     });
 
-    user.prototype.simplify = function(): void {
+    User.prototype.simplify = function(): void {
         const user = Object.assign({}, this.get());
         delete user.password;
         delete user.banned;
@@ -89,5 +89,5 @@ export function UserFactory (sequelize: Sequelize): UserType {
         return user;
     };
 
-    return user;
+    return User;
 }
