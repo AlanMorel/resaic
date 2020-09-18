@@ -1,10 +1,14 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Main from "@/components/utility/Main.vue";
-import Home from "@/components/pages/Home.vue";
-import Login from "@/components/pages/Login.vue";
-import SignUp from "@/components/pages/SignUp.vue";
-import ContactUs from "@/components/pages/ContactUs.vue";
+import Main from "@/components/utility/Main";
+import Home from "@/components/pages/Home";
+import Login from "@/components/pages/Login";
+import SignUp from "@/components/pages/SignUp";
+import ContactUs from "@/components/pages/ContactUs";
+import TermsOfService from "@/components/pages/TermsOfService";
+import PrivacyPolicy from "@/components/pages/PrivacyPolicy";
+import Changelog from "@/components/pages/Changelog";
+
 
 Vue.use(VueRouter);
 
@@ -15,21 +19,26 @@ const routes = [
         children: [
             {
                 path: "/",
-                name: "Home",
                 component: Home
             }, {
                 path: "/contact-us",
-                name: "ContactUs",
                 component: ContactUs
+            }, {
+                path: "/terms-of-service",
+                component: TermsOfService
+            }, {
+                path: "/privacy-policy",
+                component: PrivacyPolicy
+            }, {
+                path: "/changelog",
+                component: Changelog
             }
         ]
     }, {
         path: "/login",
-        name: "Login",
         component: Login
     }, {
         path: "/signup",
-        name: "SignUp",
         component: SignUp
     }
 ];
