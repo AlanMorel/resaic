@@ -1,11 +1,18 @@
 <template>
     <div class="home">
-        <img alt="Vue logo" src="/assets/logo.png" />
+        <Hero image="/assets/background.png">
+            <h1>Home</h1>
+        </Hero>
     </div>
 </template>
 
 <script>
+    import Hero from "@/components/utility/Hero";
+
     export default {
-        name: "Home"
+        name: "Home",
+        components: {
+            Hero
+        }
     };
 </script>

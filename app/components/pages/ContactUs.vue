@@ -1,5 +1,8 @@
 <template>
     <div class="contact-us">
+        <Hero image="/assets/background.png">
+            <h1>Contact Us</h1>
+        </Hero>
         <div class="contact-us__form l-container">
             <form method="POST" class="contact-us__form" @submit.prevent="sendMessage">
                 <FormInput for-text="name" placeholder="Name">
@@ -20,12 +23,14 @@
 <script>
     import axios from "axios";
 
+    import Hero from "@/components/utility/Hero";
     import FormInput from "@/components/utility/FormInput";
     import ProgressButton from "@/components/utility/ProgressButton";
 
     export default {
         name: "ContactUs",
         components: {
+            Hero,
             FormInput,
             ProgressButton
         },
@@ -74,7 +79,7 @@
     .contact-us__form {
         max-width: 48rem;
         margin: auto;
-        padding: 4rem 0;
+        padding: 2rem 0;
     }
 
     .contact-us__message {
