@@ -12,5 +12,5 @@ export function accept(next: NextFunction): void {
 }
 
 export function isForbiddenUsername(username: string): boolean {
-    return ['login', 'signup', 'changelog'].includes(username);
+    return ["login", "signup", "changelog"].includes(username);
 }

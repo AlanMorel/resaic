@@ -15,7 +15,8 @@ module.exports = {
             "error",
             4,
             { 
-                "baseIndent": 1
+                "baseIndent": 1,
+                "switchCase": 1
             }
         ],
     },

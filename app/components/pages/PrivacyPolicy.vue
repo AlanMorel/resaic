@@ -6,6 +6,9 @@
 
 <script>
     export default {
-        name: "PrivacyPolicy"
+        name: "PrivacyPolicy",
+        created() {
+            document.title = "Privacy Policy | Resia";
+        }
     };
 </script>
