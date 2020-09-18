@@ -8,7 +8,7 @@ import ContactUs from "@/components/pages/ContactUs";
 import TermsOfService from "@/components/pages/TermsOfService";
 import PrivacyPolicy from "@/components/pages/PrivacyPolicy";
 import Changelog from "@/components/pages/Changelog";
-
+import NotFound from "@/components/pages/NotFound";
 
 Vue.use(VueRouter);
 
@@ -32,6 +32,9 @@ const routes = [
             }, {
                 path: "/changelog",
                 component: Changelog
+            }, {
+                path: "/not-found",
+                component: NotFound
             }
         ]
     }, {
@@ -40,6 +43,13 @@ const routes = [
     }, {
         path: "/signup",
         component: SignUp
+    }, {
+        path: "*",
+        beforeEnter: (to, from, next) => {
+            next({
+                path: "/not-found"
+            });
+        }
     }
 ];
 
