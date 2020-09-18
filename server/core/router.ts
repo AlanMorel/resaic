@@ -13,6 +13,9 @@ import CheckUsernameControllerPolicy from "../policies/CheckUsernameControllerPo
 
 import LogoutController from "../controllers/LogoutController";
 
+import ContactController from "../controllers/ContactController";
+import ContactControllerPolicy from "../policies/ContactControllerPolicy";
+
 export default (app: Application): void => {
     app.post("/api/register", RegisterControllerPolicy, RegisterController);
     
@@ -22,5 +25,7 @@ export default (app: Application): void => {
 
     app.post("/api/logout", LogoutController);
 
+    app.post("/api/contact", ContactControllerPolicy, ContactController);
+    
     app.get("*", MainController);
 };

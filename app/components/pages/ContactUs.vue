@@ -51,7 +51,7 @@
                 };
 
                 this.progress = true;
-                axios.post("/api/message", data).then(response => {
+                axios.post("/api/contact", data).then(response => {
                     this.progress = false;
                     if (response.data.success) {
                         // TODO display success

@@ -1,18 +1,18 @@
 import { Request, Response } from "express";
 import { success, error, exception } from "../helpers/ControllerHelper";
-import { User } from "../database/database";
+import { Contact } from "../database/database";
 
 export default async (req: Request, res: Response): Promise<void> => {
     try {
-        const user = await User.create({
+        const contact = await Contact.create({
             ...req.body,
             ipAddress: req.ip
         });
 
-        if (user) {
+        if (contact) {
             success(res);
         } else {
-            error(res, "An error occurred creating your account. Please try again.");
+            error(res, "An error occurred sending your message. Please try again.");
         }
     } catch (err) {
         exception(res, err);

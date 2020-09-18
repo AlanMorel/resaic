@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import { UserFactory } from "./models/User";
+import { ContactFactory } from "./models/Contact";
 
 const Database = new Sequelize({
     host: "localhost",
@@ -15,5 +16,6 @@ const Database = new Sequelize({
 });
 
 export const User = UserFactory(Database);
+export const Contact = ContactFactory(Database);
 
 export default Database;

@@ -1,4 +1,5 @@
 import { BuildOptions, Model, DataTypes, Sequelize } from "sequelize";
+import bcrypt from "bcrypt";
 
 export interface UserAttributes {
     id: number;
@@ -11,8 +12,6 @@ export interface UserAttributes {
     country: string;
     city: string;
     bio: string;
-    createdAt?: Date;
-    updatedAt?: Date;
 }
 
 export interface UserModel extends Model<UserAttributes>, UserAttributes {
@@ -66,17 +65,11 @@ export function UserFactory (sequelize: Sequelize): UserType {
         bio: {
             type: DataTypes.TEXT,
             allowNull: true
-        },
-        createdAt: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW
-        },
-        updatedAt: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW
         }
+    }, {
+        hooks: {	
+            beforeCreate: hashPassword	
+        }	
     });
 
     User.prototype.simplify = function(): void {
@@ -90,4 +83,8 @@ export function UserFactory (sequelize: Sequelize): UserType {
     };
 
     return User;
+}
+
+const hashPassword = async (user: UserModel): Promise<void> => {
+    user.password = await bcrypt.hash(user.password, 10);
 }
