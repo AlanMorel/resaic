@@ -14,7 +14,9 @@ export default async (req: RequestWithUser, res: Response): Promise<void> => {
     }
 
     try {
-        // update logged in time
+        req.user.update({
+            lastLoggedIn: new Date()
+        })
     } catch (err) {
         exception(res, err);
     }
