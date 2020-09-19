@@ -32,7 +32,7 @@
     .not-found__message {
         margin-bottom: 1rem;
     }
-    
+
     .not-found__button {
         padding: 0.5rem 1rem;
         background-color: var(--primary-color);

@@ -32,9 +32,9 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "sequelize": "^6.3.5",
-    "vue": "^2.6.12",
-    "vue-router": "^3.4.3",
-    "vuex": "^3.5.1"
+    "vue": "^3.0.0-0",
+    "vue-router": "^4.0.0-beta.6",
+    "vuex": "^4.0.0-beta.4"
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
@@ -59,12 +59,13 @@
     "@vue/cli-plugin-unit-jest": "^4.5.6",
     "@vue/cli-plugin-vuex": "^4.5.6",
     "@vue/cli-service": "^4.5.6",
+    "@vue/compiler-sfc": "^3.0.0-0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/test-utils": "^1.1.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.9.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-vue": "^6.2.2",
+    "eslint-plugin-vue": "^7.0.0-0",
     "jest": "^26.4.2",
     "jest-puppeteer": "^4.4.0",
     "nodemon": "^2.0.4",

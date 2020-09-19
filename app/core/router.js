@@ -1,5 +1,4 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Main from "@/components/utility/Main";
 import Home from "@/components/pages/Home";
 import Login from "@/components/pages/Login";
@@ -9,8 +8,6 @@ import TermsOfService from "@/components/pages/TermsOfService";
 import PrivacyPolicy from "@/components/pages/PrivacyPolicy";
 import Changelog from "@/components/pages/Changelog";
 import NotFound from "@/components/pages/NotFound";
-
-Vue.use(VueRouter);
 
 const routes = [
     {
@@ -44,7 +41,7 @@ const routes = [
         path: "/signup",
         component: SignUp
     }, {
-        path: "*",
+        path: "/*",
         beforeEnter: (to, from, next) => {
             next({
                 path: "/not-found"
@@ -53,8 +50,8 @@ const routes = [
     }
 ];
 
-const router = new VueRouter({
-    mode: "history",
+const router = createRouter({
+    history: createWebHistory(),
     base: process.env.BASE_URL,
     routes
 });

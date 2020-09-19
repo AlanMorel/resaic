@@ -3,8 +3,8 @@
         <div class="hero__content l-container">
             <slot />
         </div>
-        <div class="hero__image">
-            <img :src="image" alt="Resia background" draggable="false" />
+        <div class="hero__image-container">
+            <img :src="image" class="hero__image" alt="Resia background" draggable="false" />
         </div>
     </div>
 </template>
@@ -41,11 +41,15 @@
         text-align: center;
     }
 
-    .hero__image {
+    .hero__image-container {
         position: absolute;
         transform: translateY(-50%);
         top: 50%;
         left: 0;
+        width: 100%;
+    }
+
+    .hero__image {
         width: 100%;
     }
 </style>

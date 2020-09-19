@@ -6,7 +6,7 @@
             </router-link>
         </div>
         <ul class="nav__menu">
-           <template v-if="user.loggedIn">
+            <template v-if="user.loggedIn">
                 <li class="nav__item">
                     <span @click="logout" class="nav__link">Log out</span>
                 </li>

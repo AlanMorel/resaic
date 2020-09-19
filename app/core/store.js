@@ -1,7 +1,4 @@
-import Vue from "vue";
-import Vuex from "vuex";
-
-Vue.use(Vuex);
+import { createStore } from "vuex";
 
 let state = {
 
@@ -27,7 +24,7 @@ let actions = {
 
 state = Object.assign({}, state, data)
 
-const store = new Vuex.Store({
+const store = createStore({
     state,
     getters,
     mutations,
