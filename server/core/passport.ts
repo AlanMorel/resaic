@@ -42,7 +42,7 @@ export default (app: Application): void => {
         if (!user) {
             return done("Incorrect username or password.");
         }
-        
+
         const validPassword = await bcrypt.compare(password, user.password);
         if (!validPassword) {
             return done("Incorrect username or password.");

@@ -9,5 +9,6 @@
         "typeRoots": [
             "server/types",
         ]
-    }
+    },
+    "exclude": [ "server/types" ]
 }

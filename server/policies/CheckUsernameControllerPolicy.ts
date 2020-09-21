@@ -7,7 +7,7 @@ export default async (req: Request, res: Response, next: NextFunction): Promise<
         reject(res, "This username is unavailable");
         return;
     }
-    
+
     const schema = Joi.object({
         username: Joi.string().alphanum().required().min(4)
     });

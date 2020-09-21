@@ -8,7 +8,7 @@ export default async (req: Request, res: Response, next: NextFunction): Promise<
         reject(res, "This username is unavailable");
         return;
     }
-    
+
     const passwordComplexityOptions: ComplexityOptions = {
         min: 8,
         max: 255,

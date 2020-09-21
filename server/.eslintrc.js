@@ -15,7 +15,8 @@ module.exports = {
         "@typescript-eslint/explicit-function-return-type": ["error"],
         indent: 2,
         semi: 2,
-        quotes: 2
+        quotes: 2,
+        "no-trailing-spaces": "error"
     },
     plugins: ["@typescript-eslint"]
 };

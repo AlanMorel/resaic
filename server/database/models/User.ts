@@ -67,9 +67,9 @@ export function UserFactory (sequelize: Sequelize): UserType {
             allowNull: true
         }
     }, {
-        hooks: {	
-            beforeCreate: hashPassword	
-        }	
+        hooks: {
+            beforeCreate: hashPassword
+        }
     });
 
     User.prototype.simplify = function(): void {

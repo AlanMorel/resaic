@@ -6,7 +6,7 @@
 
 declare module "joi-password-complexity" {
 
-    import { ValidationOptions, Context } from 'joi';
+    import { ValidationOptions, Context } from "joi";
 
     export interface ComplexityOptions {
         min?: number;
@@ -36,13 +36,13 @@ declare module "joi-password-complexity" {
         type: string;
         base: string;
         messages: {
-            'passwordComplexity.tooShort': string,
-            'passwordComplexity.tooLong': string,
-            'passwordComplexity.lowercase': string,
-            'passwordComplexity.uppercase': string,
-            'passwordComplexity.numeric': string,
-            'passwordComplexity.symbol': string,
-            'passwordComplexity.requirementCount': string,
+            "passwordComplexity.tooShort": string,
+            "passwordComplexity.tooLong": string,
+            "passwordComplexity.lowercase": string,
+            "passwordComplexity.uppercase": string,
+            "passwordComplexity.numeric": string,
+            "passwordComplexity.symbol": string,
+            "passwordComplexity.requirementCount": string,
         };
         validate: (value: string) => {
             value: string

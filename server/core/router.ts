@@ -18,7 +18,7 @@ import ContactControllerPolicy from "../policies/ContactControllerPolicy";
 
 export default (app: Application): void => {
     app.post("/api/register", RegisterControllerPolicy, RegisterController);
-    
+
     app.post("/api/login", LoginControllerPolicy, LoginController);
 
     app.post("/api/check-username", CheckUsernameControllerPolicy, CheckUsernameController);
@@ -26,6 +26,6 @@ export default (app: Application): void => {
     app.post("/api/logout", LogoutController);
 
     app.post("/api/contact", ContactControllerPolicy, ContactController);
-    
+
     app.get("*", MainController);
 };

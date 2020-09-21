@@ -23,7 +23,7 @@ export default (req: RequestWithUser, res: Response): void => {
             ...user
         }
     };
-    
+
     res.render("main", {
         layout: false,
         app,
