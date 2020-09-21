@@ -11,7 +11,7 @@ import passport from "./passport";
 import handlebars from "./handlebars";
 import router from "./router";
 import Database from "../database/database";
-import connectSessionSequelize from "connect-session-sequelize"; 
+import connectSessionSequelize from "connect-session-sequelize";
 
 const SequelizeStore = connectSessionSequelize(session.Store);
 const store = new SequelizeStore({
