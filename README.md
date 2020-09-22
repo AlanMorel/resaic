@@ -2,12 +2,12 @@
 
 ## Project setup
 
-Install the required dependencies at the root of the project:
+1) Install the required dependencies by running this command at the root of the project:
 ```
 npm install
 ```
 
-Create a `.env` file, also at the root of the project. Here are example settings:
+2) Create a `.env` file, also at the root of the project. Here are example settings:
 ```
 PORT=8000
 NODE_ENV=development
@@ -19,17 +19,19 @@ DATABASE_PASSWORD=
 DATABASE_TABLE=resia
 ```
 
-Create a new MySQL table with the name specified. Now run the server:
+3) Create a new MySQL table with the name specified.
+
+4) Run the server by running this command:
 ```
 npm run server
 ```
 
-In a seperate terminal, build the app:
+5) In a seperate terminal, build the app by running this command:
 ```
 npm run build-dev
 ```
 
-Now visit `http://localhost:8000` to see the app running.
+6) Visit `http://localhost:8000` to see the app running.
 
 ### Project scripts
 ```
