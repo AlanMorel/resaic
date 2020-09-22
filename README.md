@@ -1,11 +1,13 @@
 # Resia
 
 ## Project setup
+
+Install the required dependencies at the root of the project:
 ```
 npm install
 ```
 
-Create a `.env` file at the root of the project. Here are example settings:
+Create a `.env` file, also at the root of the project. Here are example settings:
 ```
 PORT=8000
 NODE_ENV=development
@@ -17,9 +19,13 @@ DATABASE_PASSWORD=
 DATABASE_TABLE=resia
 ```
 
-In two separate terminals, run the server, then build the app:
+Create a new MySQL table with the name specified. Now run the server:
 ```
 npm run server
+```
+
+In a seperate terminal, build the app:
+```
 npm run build-dev
 ```
 
