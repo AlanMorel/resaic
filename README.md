@@ -5,6 +5,26 @@
 npm install
 ```
 
+Create a `.env` file at the root of the project. Here are example settings:
+```
+PORT=8000
+NODE_ENV=development
+SESSION_SECRET=secret
+
+DATABASE_HOST=localhost
+DATABASE_USERNAME=root
+DATABASE_PASSWORD=
+DATABASE_TABLE=resia
+```
+
+In two separate terminals, run the server, then build the app:
+```
+npm run server
+npm run build-dev
+```
+
+Now visit `http://localhost:8000` to see the app running.
+
 ### Project scripts
 ```
 // build app for development
