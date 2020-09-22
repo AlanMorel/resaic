@@ -7,11 +7,11 @@ import { Op } from "sequelize";
 import { Application } from "express";
 
 export default (app: Application): void => {
-    Passport.serializeUser((user: UserModel, done: Function) => {
+    Passport.serializeUser((user: UserModel, done: any) => {
         done(null, user.id);
     });
 
-    Passport.deserializeUser((id: number, done: Function) => {
+    Passport.deserializeUser((id: number, done: any) => {
         User.findOne({
             where: {
                 id: id
@@ -28,7 +28,7 @@ export default (app: Application): void => {
     Passport.use(new LocalStrategy.Strategy({
         usernameField: "identifier"
     },
-    async (identifier: string, password: string, done: Function) => {
+    async (identifier: string, password: string, done: any) => {
         const user = await User.findOne({
             where: {
                 [Op.or]: [{

@@ -1,4 +1,5 @@
 declare module "connect-session-sequelize" {
+
     import { Store } from "express-session";
     import { Sequelize, Model } from "sequelize";
 
