@@ -76,6 +76,7 @@ export function UserFactory (sequelize: Sequelize): UserType {
         const user = Object.assign({}, this.get());
         delete user.password;
         delete user.banned;
+        delete user.lastLoggedIn;
         delete user.ipAddress;
         delete user.createdAt;
         delete user.updatedAt;
@@ -87,4 +88,4 @@ export function UserFactory (sequelize: Sequelize): UserType {
 
 const hashPassword = async (user: UserModel): Promise<void> => {
     user.password = await bcrypt.hash(user.password, 10);
-}
+};

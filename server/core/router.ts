@@ -2,30 +2,37 @@ import { Application } from "express";
 
 import MainController from "../controllers/MainController";
 
+import RegisterPolicy from "../policies/RegisterPolicy";
 import RegisterController from "../controllers/RegisterController";
-import RegisterControllerPolicy from "../policies/RegisterControllerPolicy";
 
+import LoginPolicy from "../policies/LoginPolicy";
 import LoginController from "../controllers/LoginController";
-import LoginControllerPolicy from "../policies/LoginControllerPolicy";
 
+import CheckUsernamePolicy from "../policies/CheckUsernamePolicy";
 import CheckUsernameController from "../controllers/CheckUsernameController";
-import CheckUsernameControllerPolicy from "../policies/CheckUsernameControllerPolicy";
 
 import LogoutController from "../controllers/LogoutController";
 
+import ContactPolicy from "../policies/ContactPolicy";
 import ContactController from "../controllers/ContactController";
-import ContactControllerPolicy from "../policies/ContactControllerPolicy";
+
+import AuthenticationPolicy from "../policies/AuthenticationPolicy";
+
+import SettingsPolicy from "../policies/SettingsPolicy";
+import SettingsController from "../controllers/SettingsController";
 
 export default (app: Application): void => {
-    app.post("/api/register", RegisterControllerPolicy, RegisterController);
+    app.post("/api/register", RegisterPolicy, RegisterController);
 
-    app.post("/api/login", LoginControllerPolicy, LoginController);
+    app.post("/api/login", LoginPolicy, LoginController);
 
-    app.post("/api/check-username", CheckUsernameControllerPolicy, CheckUsernameController);
+    app.post("/api/check-username", CheckUsernamePolicy, CheckUsernameController);
 
     app.post("/api/logout", LogoutController);
 
-    app.post("/api/contact", ContactControllerPolicy, ContactController);
+    app.post("/api/contact", ContactPolicy, ContactController);
+
+    app.put("/api/settings", AuthenticationPolicy, SettingsPolicy, SettingsController);
 
     app.get("*", MainController);
 };

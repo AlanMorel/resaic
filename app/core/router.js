@@ -7,6 +7,7 @@ import ContactUs from "@/components/pages/ContactUs";
 import TermsOfService from "@/components/pages/TermsOfService";
 import PrivacyPolicy from "@/components/pages/PrivacyPolicy";
 import Changelog from "@/components/pages/Changelog";
+import Settings from "@/components/pages/Settings";
 import NotFound from "@/components/pages/NotFound";
 
 const routes = [
@@ -29,6 +30,9 @@ const routes = [
             }, {
                 path: "/changelog",
                 component: Changelog
+            }, {
+                path: "/settings",
+                component: Settings
             }, {
                 path: "/not-found",
                 component: NotFound

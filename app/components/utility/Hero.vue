@@ -37,7 +37,6 @@
         left: 50%;
         top: 50%;
         color: white;
-        font-family: $primary-font;
         text-align: center;
     }
 

@@ -8,6 +8,9 @@
         <ul class="nav__menu">
             <template v-if="user.loggedIn">
                 <li class="nav__item">
+                    <router-link to="/settings" class="nav__link">Settings</router-link>
+                </li>
+                <li class="nav__item">
                     <span @click="logout" class="nav__link">Log out</span>
                 </li>
             </template>

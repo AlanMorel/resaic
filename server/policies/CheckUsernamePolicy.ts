@@ -1,12 +1,15 @@
 import Joi from "joi";
-import { accept, reject } from "../helpers/PolicyHelper";
 import { Request, Response, NextFunction } from "express";
+import { accept, reject, isForbiddenUsername } from "../helpers/PolicyHelper";
 
 export default async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    if (isForbiddenUsername(req.body.username)) {
+        reject(res, "This username is unavailable");
+        return;
+    }
+
     const schema = Joi.object({
-        name: Joi.string().alphanum().min(4).required(),
-        email: Joi.string().email().min(5).required(),
-        message: Joi.string().min(1).required()
+        username: Joi.string().alphanum().required().min(4)
     });
 
     const { error } = schema.validate(req.body);
