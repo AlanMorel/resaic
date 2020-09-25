@@ -33,7 +33,9 @@ module.exports = {
                 jest: true
             }
         }, {
-            files: ["*.vue"],
+            files: [
+                "*.vue"
+            ],
             rules: {
                 indent: "off"
             }
