@@ -6,7 +6,7 @@
 </template>
 
 <script>
-    import SpinnerIcon from "@/components/icons/SpinnerIcon";
+    import { SpinnerIcon } from "@alanmorel/vida";
 
     export default {
         name: "ProgressButton",

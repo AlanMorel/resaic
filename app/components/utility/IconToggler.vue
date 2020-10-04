@@ -1,13 +1,12 @@
 <template>
     <span class="icon-toggler" @click="toggle">
-        <component :is="on + 'Icon'" v-if="!value" />
+        <component :is="on + 'Icon'" v-if="!modelValue" />
         <component :is="off + 'Icon'" v-else />
     </span>
 </template>
 
 <script>
-    import EyeClosedIcon from "@/components/icons/EyeClosedIcon";
-    import EyeOpenedIcon from "@/components/icons/EyeOpenedIcon";
+    import { EyeClosedIcon, EyeOpenedIcon } from "@alanmorel/vida";
 
     export default {
         name: "IconToggler",
@@ -16,7 +15,7 @@
             EyeOpenedIcon
         },
         props: {
-            value: {
+            modelValue: {
                 type: Boolean,
                 required: true
             },
@@ -31,7 +30,7 @@
         },
         methods: {
             toggle() {
-                this.$emit("input", !this.value);
+                this.$emit("update:modelValue", !this.modelValue);
             }
         }
     }
