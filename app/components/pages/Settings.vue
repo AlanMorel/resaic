@@ -1,7 +1,7 @@
 <template>
     <div class="settings">
         <div class="settings__inner">
-            <h1>Settings</h1>
+            <h1 class="settings__header">Settings</h1>
             <form @submit.prevent="updateSettings">
                 <FormInput for-text="username" placeholder="Username" :dynamic="false">
                     <input type="text" name="username" v-model="username" autocomplete="username" autocorrect="off" placeholder="resia" @blur="usernameCheck()" disabled>
@@ -92,6 +92,10 @@
                 font-family: $primary-font;
             }
         }
+    }
+
+    .settings__header {
+        margin-bottom: 1rem;
     }
 
     .settings__inner {
