@@ -1,13 +1,12 @@
+import bcrypt from "bcrypt";
+import { Application } from "express";
 import Passport from "passport";
 import LocalStrategy from "passport-local";
-import bcrypt from "bcrypt";
-import { User } from "../database/database";
-import { UserModel } from "../database/models/User";
 import { Op } from "sequelize";
-import { Application } from "express";
+import { User } from "../database/database";
 
 export default (app: Application): void => {
-    Passport.serializeUser((user: UserModel, done: any) => {
+    Passport.serializeUser((user: any, done: any) => {
         done(null, user.id);
     });
 
@@ -28,28 +27,28 @@ export default (app: Application): void => {
     Passport.use(new LocalStrategy.Strategy({
         usernameField: "identifier"
     },
-    async (identifier: string, password: string, done: any) => {
-        const user = await User.findOne({
-            where: {
-                [Op.or]: [{
-                    username: identifier
-                }, {
-                    email: identifier
-                }]
+        async (identifier: string, password: string, done: any) => {
+            const user = await User.findOne({
+                where: {
+                    [Op.or]: [{
+                        username: identifier
+                    }, {
+                        email: identifier
+                    }]
+                }
+            });
+
+            if (!user) {
+                return done("Incorrect username or password.");
             }
-        });
 
-        if (!user) {
-            return done("Incorrect username or password.");
-        }
+            const validPassword = await bcrypt.compare(password, user.password);
+            if (!validPassword) {
+                return done("Incorrect username or password.");
+            }
 
-        const validPassword = await bcrypt.compare(password, user.password);
-        if (!validPassword) {
-            return done("Incorrect username or password.");
-        }
-
-        return done(null, user);
-    }));
+            return done(null, user);
+        }));
 
     app.use(Passport.initialize());
     app.use(Passport.session());
