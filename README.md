@@ -9,7 +9,7 @@ npm install
 
 2) Create a `.env` file, also at the root of the project. Here are example settings:
 ```
-PORT=8000
+PORT=3000
 NODE_ENV=development
 SESSION_SECRET=secret
 
@@ -31,7 +31,7 @@ npm run server
 npm run build-dev
 ```
 
-6) Visit `http://localhost:8000` to see the app running.
+6) Visit `http://localhost:3000` to see the app running.
 
 ### Project scripts
 ```
