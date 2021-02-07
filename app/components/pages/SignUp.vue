@@ -8,11 +8,11 @@
         <template #content>
             <form @submit.prevent="signup">
                 <FormInput for-text="username" placeholder="Username">
-                    <input type="text" name="username" v-model="username" autocomplete="username" autocorrect="off" placeholder="resia" @blur="usernameCheck()" required>
+                    <input type="text" name="username" v-model="username" autocomplete="username" autocorrect="off" placeholder="resaic" @blur="usernameCheck()" required>
                 </FormInput>
                 <ValidationList v-if="username" :errors="usernameErrors" :successes="usernameSuccesses" />
                 <FormInput for-text="email" placeholder="Email">
-                    <input type="text" name="email" v-model="email" autocomplete="email" autocorrect="email" placeholder="resia@resia.co" required>
+                    <input type="text" name="email" v-model="email" autocomplete="email" autocorrect="email" placeholder="resaic@resaic.co" required>
                 </FormInput>
                 <ValidationList v-if="email" :errors="validateEmail(email)" />
                 <FormInput for-text="password" placeholder="Password">
@@ -24,7 +24,7 @@
                 <div class="sign-up__legal-agreement">
                     <input type="checkbox" v-model="legalAgreement" />
                     <span>
-                        I agree to the Resia <router-link to="/privacy-policy">Privacy Policy</router-link> and <router-link to="/terms-of-service">Terms of Service</router-link>.
+                        I agree to the Resaic <router-link to="/privacy-policy">Privacy Policy</router-link> and <router-link to="/terms-of-service">Terms of Service</router-link>.
                     </span>
                 </div>
                 <div class="centered-page__error" v-if="error">
@@ -80,7 +80,7 @@
             progress: false
         }),
         created() {
-            document.title = "Sign Up | Resia";
+            document.title = "Sign Up | Resaic";
         },
         computed: {
             usernameErrors() {

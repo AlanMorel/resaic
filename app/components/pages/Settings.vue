@@ -4,10 +4,10 @@
             <h1 class="settings__header">Settings</h1>
             <form @submit.prevent="updateSettings">
                 <FormInput for-text="username" placeholder="Username" :dynamic="false">
-                    <input type="text" name="username" v-model="username" autocomplete="username" autocorrect="off" placeholder="resia" @blur="usernameCheck()" disabled>
+                    <input type="text" name="username" v-model="username" autocomplete="username" autocorrect="off" placeholder="resaic" @blur="usernameCheck()" disabled>
                 </FormInput>
                 <FormInput for-text="email" placeholder="Email" :dynamic="false">
-                    <input type="text" name="email" v-model="email" autocomplete="email" autocorrect="email" placeholder="resia@resia.co" disabled>
+                    <input type="text" name="email" v-model="email" autocomplete="email" autocorrect="email" placeholder="resaic@resaic.co" disabled>
                 </FormInput>
                 <FormInput for-text="bio" placeholder="Bio" :dynamic="false">
                     <textarea v-model="bio" class="settings__bio" placeholder="I'm an awesome person!"></textarea>
@@ -50,7 +50,7 @@
             progress: false
         }),
         created() {
-            document.title = "Settings | Resia";
+            document.title = "Settings | Resaic";
             this.username = this.user.username;
             this.email = this.user.email;
             this.bio = this.user.bio || "";

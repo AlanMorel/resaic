@@ -41,7 +41,7 @@
             progress: false
         }),
         created() {
-            document.title = "Contact Us | Resia";
+            document.title = "Contact Us | Resaic";
         },
         methods: {
             sendMessage() {

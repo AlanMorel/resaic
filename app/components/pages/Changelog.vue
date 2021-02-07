@@ -6,7 +6,7 @@
         <ul class="changelog__list l-container">
             <Log version="1.0.0" date="December 31st, 2020">
                 <ul>
-                    <li>Resia has launched.</li>
+                    <li>Resaic has launched.</li>
                 </ul>
             </Log>
         </ul>
@@ -24,7 +24,7 @@
             Log
         },
         created() {
-            document.title = "Changelog | Resia";
+            document.title = "Changelog | Resaic";
         }
     }
 </script>

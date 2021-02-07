@@ -4,7 +4,7 @@
             <slot />
         </div>
         <div class="hero__image-container">
-            <img :src="image" class="hero__image" alt="Resia background" draggable="false" />
+            <img :src="image" class="hero__image" alt="Resaic background" draggable="false" />
         </div>
     </div>
 </template>

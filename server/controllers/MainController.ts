@@ -2,14 +2,14 @@ import { Response } from "express";
 import RequestWithUser from "../database/interfaces";
 
 const app = {
-    slug: "resia",
-    name: "Resia",
-    domain: "resia.co"
+    slug: "resaic",
+    name: "Resaic",
+    domain: "resaic.co"
 };
 
 const metaInfo = {
-    title: "Resia",
-    description: "Resia",
+    title: "Resaic",
+    description: "Resaic",
     image: "image"
 };
 

@@ -15,7 +15,7 @@
             Hero
         },
         created() {
-            document.title = "Privacy Policy | Resia";
+            document.title = "Privacy Policy | Resaic";
         }
     };
 </script>

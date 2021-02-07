@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <Hero image="/assets/background.png">
-            <h1>Resia</h1>
+            <h1>Resaic</h1>
         </Hero>
     </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
     <div class="logo">
-        <span class="logo__text">Resia</span>
+        <span class="logo__text">Resaic</span>
     </div>
 </template>
 

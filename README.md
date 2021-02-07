@@ -1,4 +1,4 @@
-# Resia
+# Resaic
 
 ## Project setup
 
@@ -16,7 +16,7 @@ SESSION_SECRET=secret
 DATABASE_HOST=localhost
 DATABASE_USERNAME=root
 DATABASE_PASSWORD=
-DATABASE_TABLE=resia
+DATABASE_TABLE=resaic
 ```
 
 3) Create a new MySQL table with the name specified.

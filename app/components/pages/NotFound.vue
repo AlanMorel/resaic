@@ -19,7 +19,7 @@
             Hero
         },
         created() {
-            document.title = "Page Not Found | Resia";
+            document.title = "Page Not Found | Resaic";
         }
     };
 </script>

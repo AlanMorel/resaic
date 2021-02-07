@@ -17,7 +17,7 @@ module.exports = {
         "vue/script-indent": [
             "error",
             4,
-            { 
+            {
                 "baseIndent": 1,
                 "switchCase": 1
             }

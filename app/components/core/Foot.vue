@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="footer__copyright">
-            Copyright © 2020 Resia. All rights reserved.
+            Copyright © 2020 Resaic. All rights reserved.
         </div>
     </footer>
 </template>

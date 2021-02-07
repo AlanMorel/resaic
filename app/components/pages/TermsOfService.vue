@@ -15,7 +15,7 @@
             Hero
         },
         created() {
-            document.title = "Terms Of Service | Resia";
+            document.title = "Terms Of Service | Resaic";
         }
     };
 </script>
