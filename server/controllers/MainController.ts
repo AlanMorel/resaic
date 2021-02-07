@@ -1,4 +1,6 @@
 import { Response } from "express";
+import fs from "fs";
+import config from "../config";
 import RequestWithUser from "../database/interfaces";
 
 const app = {
@@ -12,6 +14,8 @@ const metaInfo = {
     description: "Resaic",
     image: "image"
 };
+
+const styles = config.env === "production" ? fs.readFileSync(config.projectRoot + "dist/production/css/index.css") : "";
 
 export default (req: RequestWithUser, res: Response): void => {
 
@@ -29,6 +33,7 @@ export default (req: RequestWithUser, res: Response): void => {
         app,
         metaInfo,
         path: req.path,
-        store
+        store,
+        styles
     });
 };
