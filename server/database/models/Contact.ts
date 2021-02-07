@@ -1,4 +1,4 @@
-import { BuildOptions, Model, DataTypes, Sequelize } from "sequelize";
+import { BuildOptions, DataTypes, Model, Sequelize } from "sequelize";
 
 export interface ContactAttributes {
     id: number;
@@ -13,11 +13,11 @@ export interface ContactModel extends Model<ContactAttributes>, ContactAttribute
 }
 
 export type ContactType = typeof Model & {
-   new (values?: any, options?: BuildOptions): ContactModel;
+    new(values?: any, options?: BuildOptions): ContactModel;
 };
 
-export function ContactFactory (sequelize: Sequelize): ContactType {
-    const Contact = <ContactType> sequelize.define("Contacts", {
+export function ContactFactory(sequelize: Sequelize): ContactType {
+    const Contact = <ContactType>sequelize.define("Contacts", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,

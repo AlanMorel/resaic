@@ -1,6 +1,6 @@
 import { Response } from "express";
-import { success, exception } from "../helpers/ControllerHelper";
 import RequestWithUser from "../database/interfaces";
+import { exception, success } from "../helpers/ControllerHelper";
 
 const DAY = 1000 * 60 * 60 * 24;
 

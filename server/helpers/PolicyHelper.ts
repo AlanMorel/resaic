@@ -1,4 +1,4 @@
-import { Response, NextFunction } from "express";
+import { NextFunction, Response } from "express";
 
 export function reject(res: Response, error: string, status = 200): void {
     res.status(status).json({

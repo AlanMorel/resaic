@@ -1,6 +1,6 @@
+import { NextFunction, Request, Response } from "express";
 import Joi from "joi";
-import { Request, Response, NextFunction } from "express";
-import { accept, reject, isForbiddenUsername } from "../helpers/PolicyHelper";
+import { accept, isForbiddenUsername, reject } from "../helpers/PolicyHelper";
 
 export default async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     if (isForbiddenUsername(req.body.username)) {

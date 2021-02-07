@@ -1,25 +1,17 @@
 import { Application } from "express";
-
-import MainController from "../controllers/MainController";
-
-import RegisterPolicy from "../policies/RegisterPolicy";
-import RegisterController from "../controllers/RegisterController";
-
-import LoginPolicy from "../policies/LoginPolicy";
-import LoginController from "../controllers/LoginController";
-
-import CheckUsernamePolicy from "../policies/CheckUsernamePolicy";
 import CheckUsernameController from "../controllers/CheckUsernameController";
-
-import LogoutController from "../controllers/LogoutController";
-
-import ContactPolicy from "../policies/ContactPolicy";
 import ContactController from "../controllers/ContactController";
-
-import AuthenticationPolicy from "../policies/AuthenticationPolicy";
-
-import SettingsPolicy from "../policies/SettingsPolicy";
+import LoginController from "../controllers/LoginController";
+import LogoutController from "../controllers/LogoutController";
+import MainController from "../controllers/MainController";
+import RegisterController from "../controllers/RegisterController";
 import SettingsController from "../controllers/SettingsController";
+import AuthenticationPolicy from "../policies/AuthenticationPolicy";
+import CheckUsernamePolicy from "../policies/CheckUsernamePolicy";
+import ContactPolicy from "../policies/ContactPolicy";
+import LoginPolicy from "../policies/LoginPolicy";
+import RegisterPolicy from "../policies/RegisterPolicy";
+import SettingsPolicy from "../policies/SettingsPolicy";
 
 export default (app: Application): void => {
     app.post("/api/register", RegisterPolicy, RegisterController);

@@ -26,29 +26,28 @@ export default (app: Application): void => {
 
     Passport.use(new LocalStrategy.Strategy({
         usernameField: "identifier"
-    },
-        async (identifier: string, password: string, done: any) => {
-            const user = await User.findOne({
-                where: {
-                    [Op.or]: [{
-                        username: identifier
-                    }, {
-                        email: identifier
-                    }]
-                }
-            });
-
-            if (!user) {
-                return done("Incorrect username or password.");
+    }, async (identifier: string, password: string, done: any) => {
+        const user = await User.findOne({
+            where: {
+                [Op.or]: [{
+                    username: identifier
+                }, {
+                    email: identifier
+                }]
             }
+        });
 
-            const validPassword = await bcrypt.compare(password, user.password);
-            if (!validPassword) {
-                return done("Incorrect username or password.");
-            }
+        if (!user) {
+            return done("Incorrect username or password.");
+        }
 
-            return done(null, user);
-        }));
+        const validPassword = await bcrypt.compare(password, user.password);
+        if (!validPassword) {
+            return done("Incorrect username or password.");
+        }
+
+        return done(null, user);
+    }));
 
     app.use(Passport.initialize());
     app.use(Passport.session());

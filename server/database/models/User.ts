@@ -1,5 +1,5 @@
-import { BuildOptions, Model, DataTypes, Sequelize } from "sequelize";
 import bcrypt from "bcrypt";
+import { BuildOptions, DataTypes, Model, Sequelize } from "sequelize";
 
 export interface UserAttributes {
     id: number;
@@ -19,11 +19,11 @@ export interface UserModel extends Model<UserAttributes>, UserAttributes {
 }
 
 export type UserType = typeof Model & {
-   new (values?: any, options?: BuildOptions): UserModel;
+    new(values?: any, options?: BuildOptions): UserModel;
 };
 
-export function UserFactory (sequelize: Sequelize): UserType {
-    const User = <UserType> sequelize.define("users", {
+export function UserFactory(sequelize: Sequelize): UserType {
+    const User = <UserType>sequelize.define("users", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -72,7 +72,7 @@ export function UserFactory (sequelize: Sequelize): UserType {
         }
     });
 
-    User.prototype.simplify = function(): void {
+    User.prototype.simplify = function (): void {
         const user = Object.assign({}, this.get());
         delete user.password;
         delete user.banned;

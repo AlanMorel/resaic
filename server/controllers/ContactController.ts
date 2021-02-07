@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { success, error, exception } from "../helpers/ControllerHelper";
 import { Contact } from "../database/database";
+import { error, exception, success } from "../helpers/ControllerHelper";
 
 export default async (req: Request, res: Response): Promise<void> => {
     try {

@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
-import { UserFactory } from "./models/User";
 import { ContactFactory } from "./models/Contact";
+import { UserFactory } from "./models/User";
 
 const Database = new Sequelize({
     host: process.env.DATABASE_HOST,

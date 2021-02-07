@@ -1,7 +1,7 @@
 import { Response } from "express";
-import { success, exception } from "../helpers/ControllerHelper";
 import { User } from "../database/database";
 import RequestWithUser from "../database/interfaces";
+import { exception, success } from "../helpers/ControllerHelper";
 
 export default async (req: RequestWithUser, res: Response): Promise<void> => {
     try {
