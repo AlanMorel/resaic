@@ -8,15 +8,13 @@
         "build-dev": "vue-cli-service build --mode development --dest dist/development --target app --watch",
         "build-prod": "vue-cli-service build --mode production --dest dist/production --target app --modern",
         "build-server": "tsc --project ./",
-        "lint-app": "eslint ./app --config ./app/.eslintrc.js --ext .vue",
         "lint-app-fix": "eslint ./app --config ./app/.eslintrc.js --ext .vue --fix",
-        "lint-server": "eslint ./server --config ./server/.eslintrc.js --ext .ts",
         "lint-server-fix": "eslint ./server --config ./server/.eslintrc.js --ext .ts --fix",
         "server": "nodemon server/core/server.ts --watch server",
-        "server-static": "npm run build-server && node dist/server/core/server.js",
+        "server-static": "yarn build-server && node dist/server/core/server.js",
         "test-app": "jest --config jest-app.config.js || exit 0",
         "test-server": "jest --config jest-server.config.js || exit 0",
-        "start": "npm run build-prod && npm run server-static"
+        "start": "yarn build-prod && yarn server-static"
     },
     "dependencies": {
         "@alanmorel/vida": "0.0.11",
