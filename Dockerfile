@@ -1,13 +1,15 @@
-FROM node:latest
+FROM node as base
 
-WORKDIR /user/src/resaic
+WORKDIR /user/app
 
-COPY package*.json ./
+RUN npm install --global pm2
+
+COPY package.json yarn.lock ./
 
 RUN yarn install
 
 COPY . .
 
-EXPOSE ${PORT}
+FROM base as production
 
-CMD ["yarn", "start"]
+CMD ["yarn", "build-all"]
