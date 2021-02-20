@@ -1,0 +1,7 @@
+version: "3.8"
+
+services:
+    resaic:
+        build:
+            target: production
+        command: yarn start

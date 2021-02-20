@@ -37,22 +37,25 @@
                 {
                     text: "Terms of Service",
                     link: "terms-of-service"
-                }, {
+                },
+                {
                     text: "Privacy Policy",
                     link: "privacy-policy"
-                }, {
+                },
+                {
                     text: "Contact Us",
                     link: "contact-us"
-                }, {
+                },
+                {
                     text: "Changelog",
                     link: "changelog"
                 }
             ]
         })
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .footer {
         background-color: var(--primary-color);
         padding: 1rem 0 0.75rem;

@@ -21,10 +21,10 @@
                 required: true
             }
         }
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .log {
         padding: 0.75rem 0;
     }

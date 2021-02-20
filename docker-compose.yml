@@ -10,7 +10,7 @@ services:
         volumes:
             - .:/user/app
             - /user/app/node_modules
-        command: yarn server
+        command: yarn start
         restart: always
         build: .
         ports:

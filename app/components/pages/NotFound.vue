@@ -24,7 +24,7 @@
     };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .not-found {
         text-align: center;
     }
@@ -38,7 +38,7 @@
         background-color: var(--primary-color);
         border-radius: 0.25rem;
         color: white;
-        display inline-block;
+        display: inline-block;
         font-family: $primary-font;
     }
 </style>

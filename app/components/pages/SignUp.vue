@@ -8,23 +8,48 @@
         <template #content>
             <form @submit.prevent="signup">
                 <FormInput for-text="username" placeholder="Username">
-                    <input type="text" name="username" v-model="username" autocomplete="username" autocorrect="off" placeholder="resaic" @blur="usernameCheck()" required>
+                    <input
+                        type="text"
+                        name="username"
+                        v-model="username"
+                        autocomplete="username"
+                        autocorrect="off"
+                        placeholder="resaic"
+                        @blur="usernameCheck()"
+                        required
+                    />
                 </FormInput>
                 <ValidationList v-if="username" :errors="usernameErrors" :successes="usernameSuccesses" />
                 <FormInput for-text="email" placeholder="Email">
-                    <input type="text" name="email" v-model="email" autocomplete="email" autocorrect="email" placeholder="resaic@resaic.co" required>
+                    <input
+                        type="text"
+                        name="email"
+                        v-model="email"
+                        autocomplete="email"
+                        autocorrect="email"
+                        placeholder="resaic@resaic.co"
+                        required
+                    />
                 </FormInput>
                 <ValidationList v-if="email" :errors="validateEmail(email)" />
                 <FormInput for-text="password" placeholder="Password">
                     <IconToggler v-model="showPassword" on="EyeClosed" off="EyeOpened" />
-                    <input :type="showPassword ? 'text' : 'password'" name="password" v-model="password" autocomplete="password" placeholder="********" required>
+                    <input
+                        :type="showPassword ? 'text' : 'password'"
+                        name="password"
+                        v-model="password"
+                        autocomplete="password"
+                        placeholder="********"
+                        required
+                    />
                 </FormInput>
                 <StrengthIndicator :strength="passwordStrength" />
                 <ValidationList v-if="password" :errors="validatePassword(password)" />
                 <div class="sign-up__legal-agreement">
                     <input type="checkbox" v-model="legalAgreement" />
                     <span>
-                        I agree to the Resaic <router-link to="/privacy-policy">Privacy Policy</router-link> and <router-link to="/terms-of-service">Terms of Service</router-link>.
+                        I agree to the Resaic <router-link to="/privacy-policy">Privacy Policy</router-link> and
+                        <router-link to="/terms-of-service">Terms of Service</router-link>.
                     </span>
                 </div>
                 <div class="centered-page__error" v-if="error">
@@ -41,7 +66,12 @@
             </router-link>
         </template>
         <template #background>
-            <img src="/assets/background.png" alt="background" class="centered-page__background-image" draggable="false" />
+            <img
+                src="/assets/background.png"
+                alt="background"
+                class="centered-page__background-image"
+                draggable="false"
+            />
         </template>
     </CenteredPage>
 </template>
@@ -117,10 +147,12 @@
                     return;
                 }
 
-                if (this.validatePassword(this.password).length ||
+                if (
+                    this.validatePassword(this.password).length ||
                     this.validateUsername(this.username).length ||
                     this.validateEmail(this.email).length ||
-                    this.progress) {
+                    this.progress
+                ) {
                     return;
                 }
 
@@ -132,17 +164,20 @@
                     email: this.email,
                     password: this.password
                 };
-                axios.post("/api/register", data).then(response => {
-                    this.progress = false;
-                    if (response.data.success) {
-                        this.$router.push({ path: "/login" });
-                    } else {
-                        this.error = response.data.error;
-                    }
-                }).catch(error => {
-                    this.progress = false;
-                    console.log(error);
-                });
+                axios
+                    .post("/api/register", data)
+                    .then(response => {
+                        this.progress = false;
+                        if (response.data.success) {
+                            this.$router.push({ path: "/login" });
+                        } else {
+                            this.error = response.data.error;
+                        }
+                    })
+                    .catch(error => {
+                        this.progress = false;
+                        console.log(error);
+                    });
             },
             usernameCheck() {
                 this.usernameAvailability = {};
@@ -155,27 +190,30 @@
                 const data = {
                     username: this.username
                 };
-                axios.post("/api/check-username", data).then(response => {
-                    if (response.data.success) {
-                        this.usernameAvailability = {
-                            type: "success",
-                            message: "This username is available"
-                        };
-                    } else {
-                        this.usernameAvailability = {
-                            type: "error",
-                            message: response.data.error
-                        };
-                    }
-                }).catch(error => {
-                    console.log(error);
-                });
+                axios
+                    .post("/api/check-username", data)
+                    .then(response => {
+                        if (response.data.success) {
+                            this.usernameAvailability = {
+                                type: "success",
+                                message: "This username is available"
+                            };
+                        } else {
+                            this.usernameAvailability = {
+                                type: "error",
+                                message: response.data.error
+                            };
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
             }
         }
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .sign-up__legal-agreement {
         display: flex;
         align-items: center;

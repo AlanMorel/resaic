@@ -1,5 +1,5 @@
 <template>
-    <div class="progress-button" :class="{'progress': progress }">
+    <div class="progress-button" :class="{ progress: progress }">
         <SpinnerIcon theme="light" v-if="progress" />
         <input type="submit" :value="value" class="progress-button__input" @click="$emit('click')" />
     </div>
@@ -23,10 +23,10 @@
                 required: true
             }
         }
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .progress-button {
         position: relative;
         display: inline-block;

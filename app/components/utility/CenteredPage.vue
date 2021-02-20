@@ -30,10 +30,10 @@
         components: {
             Logo
         }
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .centered-page__content {
         position: absolute;
         left: 50%;

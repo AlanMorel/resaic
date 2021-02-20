@@ -3,10 +3,7 @@ module.exports = {
     env: {
         node: true
     },
-    extends: [
-        "plugin:vue/vue3-essential",
-        "eslint:recommended"
-    ],
+    extends: ["plugin:vue/vue3-essential", "eslint:recommended"],
     parserOptions: {
         parser: "babel-eslint"
     },
@@ -18,24 +15,20 @@ module.exports = {
             "error",
             4,
             {
-                "baseIndent": 1,
-                "switchCase": 1
+                baseIndent: 1,
+                switchCase: 1
             }
-        ],
+        ]
     },
     overrides: [
         {
-            files: [
-                "**/__tests__/*.{j,t}s?(x)",
-                "**/tests/unit/**/*.spec.{j,t}s?(x)"
-            ],
+            files: ["**/__tests__/*.{j,t}s?(x)", "**/tests/unit/**/*.spec.{j,t}s?(x)"],
             env: {
                 jest: true
             }
-        }, {
-            files: [
-                "*.vue"
-            ],
+        },
+        {
+            files: ["*.vue"],
             rules: {
                 indent: "off"
             }

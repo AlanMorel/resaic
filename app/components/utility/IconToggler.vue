@@ -33,10 +33,10 @@
                 this.$emit("update:modelValue", !this.modelValue);
             }
         }
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .icon-toggler {
         user-select: none;
         margin-left: 0.5rem;

@@ -8,10 +8,24 @@
         <template #content>
             <form @submit.prevent="login">
                 <FormInput for-text="identifier" placeholder="Username or Email">
-                    <input type="text" name="identifier" v-model="identifier" autocorrect="off" placeholder="resaic" required>
+                    <input
+                        type="text"
+                        name="identifier"
+                        v-model="identifier"
+                        autocorrect="off"
+                        placeholder="resaic"
+                        required
+                    />
                 </FormInput>
                 <FormInput for-text="password" placeholder="Password">
-                    <input type="password" name="password" v-model="password" autocomplete="password" placeholder="********" required>
+                    <input
+                        type="password"
+                        name="password"
+                        v-model="password"
+                        autocomplete="password"
+                        placeholder="********"
+                        required
+                    />
                 </FormInput>
                 <div class="login__remember-me">
                     <input type="checkbox" v-model="rememberMe" />
@@ -31,7 +45,12 @@
             </router-link>
         </template>
         <template #background>
-            <img src="/assets/background.png" alt="background" class="centered-page__background-image" draggable="false" />
+            <img
+                src="/assets/background.png"
+                alt="background"
+                class="centered-page__background-image"
+                draggable="false"
+            />
         </template>
     </CenteredPage>
 </template>
@@ -70,26 +89,29 @@
                     password: this.password,
                     rememberMe: this.rememberMe
                 };
-                axios.post("/api/login", data).then(response => {
-                    this.progress = false;
-                    if (response.data.success) {
-                        const user = response.data.user;
-                        user.loggedIn = true;
-                        this.$store.dispatch("updateUser", user);
-                        this.$router.push({ path: "/" });
-                    } else {
-                        this.error = response.data.error;
-                    }
-                }).catch(error => {
-                    this.progress = false;
-                    console.log(error);
-                });
+                axios
+                    .post("/api/login", data)
+                    .then(response => {
+                        this.progress = false;
+                        if (response.data.success) {
+                            const user = response.data.user;
+                            user.loggedIn = true;
+                            this.$store.dispatch("updateUser", user);
+                            this.$router.push({ path: "/" });
+                        } else {
+                            this.error = response.data.error;
+                        }
+                    })
+                    .catch(error => {
+                        this.progress = false;
+                        console.log(error);
+                    });
             }
         }
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .login__remember-me {
         display: flex;
         align-items: center;

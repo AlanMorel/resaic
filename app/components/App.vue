@@ -8,9 +8,9 @@
     </div>
 </template>
 
-<style lang="stylus">
-    @import "../styles/colors.styl";
-    @import "../styles/base.styl";
-    @import "../styles/inputs.styl";
-    @import "../styles/utility.styl";
+<style lang="scss">
+    @import "../styles/colors.scss";
+    @import "../styles/base.scss";
+    @import "../styles/inputs.scss";
+    @import "../styles/utility.scss";
 </style>

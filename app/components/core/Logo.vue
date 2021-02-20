@@ -7,10 +7,10 @@
 <script>
     export default {
         name: "Logo"
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .logo {
         display: inline-flex;
         position: relative;

@@ -20,10 +20,10 @@
                 type: Array
             }
         }
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .validation-list {
         font-family: $text-font;
         margin-bottom: 0.5rem;

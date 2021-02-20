@@ -12,10 +12,10 @@
         components: {
             Nav
         }
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .header {
         padding: 0.5rem 0;
     }

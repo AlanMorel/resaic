@@ -18,10 +18,10 @@
                 required: true
             }
         }
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .hero {
         position: relative;
         overflow: hidden;

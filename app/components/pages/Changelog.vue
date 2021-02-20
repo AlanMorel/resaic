@@ -26,10 +26,10 @@
         created() {
             document.title = "Changelog | Resaic";
         }
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .changelog__list {
         width: 30rem;
         margin: 2rem auto;

@@ -1,7 +1,12 @@
 <template>
     <div class="strength-indicator">
         <ul class="strength-indicator__sections">
-            <li v-for="index in total" :key="index" :class="'strength-indicator__section--' + getStrengthColor(index)" class="strength-indicator__section"></li>
+            <li
+                v-for="index in total"
+                :key="index"
+                :class="'strength-indicator__section--' + getStrengthColor(index)"
+                class="strength-indicator__section"
+            ></li>
         </ul>
     </div>
 </template>
@@ -41,10 +46,10 @@
                 return "none";
             }
         }
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .strength-indicator {
         user-select: none;
         margin-top: -1rem;
@@ -69,23 +74,23 @@
         }
 
         &--none {
-            background-color: var(--light-gray)
+            background-color: var(--light-gray);
         }
 
         &--red {
-            background-color: var(--danger-red)
+            background-color: var(--danger-red);
         }
 
         &--orange {
-            background-color: var(--alert-orange)
+            background-color: var(--alert-orange);
         }
 
         &--yellow {
-            background-color: var(--caution-yellow)
+            background-color: var(--caution-yellow);
         }
 
         &--green {
-            background-color: var(--success-green)
+            background-color: var(--success-green);
         }
     }
 </style>

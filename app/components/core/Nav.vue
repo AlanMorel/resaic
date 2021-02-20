@@ -43,25 +43,28 @@
         },
         methods: {
             logout() {
-                axios.post("/api/logout").then(response => {
-                    if (response.data.success) {
-                        const user = {
-                            loggedIn: false
-                        };
-                        this.$store.dispatch("updateUser", user);
-                    } else {
-                        console.log(response.data.error);
-                    }
-                }).catch(error => {
-                    this.progress = false;
-                    console.log(error);
-                });
+                axios
+                    .post("/api/logout")
+                    .then(response => {
+                        if (response.data.success) {
+                            const user = {
+                                loggedIn: false
+                            };
+                            this.$store.dispatch("updateUser", user);
+                        } else {
+                            console.log(response.data.error);
+                        }
+                    })
+                    .catch(error => {
+                        this.progress = false;
+                        console.log(error);
+                    });
             }
         }
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .nav {
         padding: 0.5rem 0;
         display: flex;

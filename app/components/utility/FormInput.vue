@@ -1,5 +1,8 @@
 <template>
-    <div class="form-input" :class="[theme ? 'form-input--' + theme : '', dynamic ? 'form-input--dynamic' : 'form-input--static']">
+    <div
+        class="form-input"
+        :class="[theme ? 'form-input--' + theme : '', dynamic ? 'form-input--dynamic' : 'form-input--static']"
+    >
         <slot />
         <label :for="forText">
             {{ placeholder }}
@@ -28,10 +31,10 @@
                 default: true
             }
         }
-    }
+    };
 </script>
 
-<style lang="stylus">
+<style lang="scss">
     .form-input {
         position: relative;
         width: 100%;

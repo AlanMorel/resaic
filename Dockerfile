@@ -1,6 +1,6 @@
 FROM node as base
 
-WORKDIR /user/app
+WORKDIR /user/resaic
 
 RUN npm install --global pm2
 
@@ -12,4 +12,3 @@ COPY . .
 
 FROM base as production
 
-CMD ["yarn", "build-all"]
