@@ -1,6 +1,6 @@
 FROM node as base
 
-WORKDIR /user/resaic
+WORKDIR /user/app
 
 RUN npm install --global pm2
 

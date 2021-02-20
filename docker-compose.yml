@@ -8,9 +8,12 @@ services:
             target: base
         container_name: resaic
         volumes:
-            - .:/user/app
+            - ./app:/user/app/app
+            - ./server:/user/app/server
             - /user/app/node_modules
-        command: yarn start
+        command: bash -c "cp .docker.env .env && yarn start"
+        env_file:
+          - ./.docker.env
         restart: always
         build: .
         ports:
