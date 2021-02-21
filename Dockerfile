@@ -10,5 +10,6 @@ RUN yarn install
 
 COPY . .
 
-FROM base as production
+RUN yarn build-all
 
+FROM base as production
