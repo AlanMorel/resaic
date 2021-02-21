@@ -1,4 +1,4 @@
-FROM node as base
+FROM node:alpine as base
 
 WORKDIR /user/app
 
@@ -11,5 +11,9 @@ RUN yarn install
 COPY . .
 
 RUN yarn build-all
+
+RUN cp .docker.env .env
+
+CMD ["yarn", "start"]
 
 FROM base as production

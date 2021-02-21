@@ -11,7 +11,6 @@ services:
             - ./app:/user/app/app
             - ./server:/user/app/server
             - /user/app/node_modules
-        command: bash -c "cp .docker.env .env && yarn start"
         env_file:
           - ./.docker.env
         restart: always
