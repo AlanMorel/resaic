@@ -7,14 +7,14 @@ services:
             dockerfile: Dockerfile
             target: base
         container_name: resaic
+        image: resaic
         volumes:
             - ./app:/user/app/app
             - ./server:/user/app/server
             - /user/app/node_modules
         env_file:
-          - ./.docker.env
+            - ./.docker.env
         restart: always
-        build: .
         ports:
             - "${PORT}:${PORT}"
         expose:
