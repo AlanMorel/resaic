@@ -2,12 +2,26 @@
 
 ## Project setup
 
-1) Install the required dependencies by running this command at the root of the project:
-```
-npm install
+1. Install node, npm, clone this repository, then install the dependencies
+
+```sh
+$ git clone https://github.com/AlanMorel/resaic resaic
 ```
 
-2) Create a `.env` file, also at the root of the project. Here are example settings:
+```sh
+$ cd resaic
+```
+
+```sh
+$ npm install yarn -g
+```
+
+```sh
+$ yarn install
+```
+
+2. Create a `.env` file, also at the root of the project. Here are example settings:
+
 ```
 PORT=3000
 NODE_ENV=development
@@ -19,52 +33,55 @@ DATABASE_PASSWORD=
 DATABASE_TABLE=resaic
 ```
 
-3) Create a new MySQL table with the name specified.
+3. Create a new MySQL table with the name specified.
 
-4) Run the server by running this command:
-```
-npm run server
-```
+4. Run the server by running this command:
 
-5) In a seperate terminal, build the app by running this command:
 ```
-npm run build-dev
+yarn server
 ```
 
-6) Visit `http://localhost:3000` to see the app running.
+5. In a seperate terminal, build the app by running this command:
+
+```
+yarn build-dev
+```
+
+6. Visit `http://localhost:3000` to see the app running.
 
 ### Project scripts
+
 ```
 // build app for development
-npm run build-dev
+yarn build-dev
 
 // build app for production
-npm run build-prod
+yarn build-prod
 
 // build server
-npm run build-server
+yarn build-server
 
 // lint app
-npm run lint-app
+yarn lint-app
 
 // lint and fix app
-npm run lint-app-fix
+yarn lint-app-fix
 
 // lint server
-npm run lint-server
+yarn lint-server
 
 // lint and fix server
-npm run lint-server-fix
+yarn lint-server-fix
 
 // build server watcher
-npm run server
+yarn server
 
 // build server and run
-npm run server-static
+yarn server-static
 
 // run tests on app
-npm run test-app
+yarn test-app
 
 // run tests on server
-npm run test-server
+yarn test-server
 ```
