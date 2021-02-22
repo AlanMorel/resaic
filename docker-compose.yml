@@ -2,12 +2,12 @@ version: "3.7"
 
 services:
     resaic:
+        container_name: resaic
+        image: resaic
         build:
             context: .
             dockerfile: Dockerfile
             target: base
-        container_name: resaic
-        image: resaic
         volumes:
             - ./app:/user/app/app
             - ./server:/user/app/server
@@ -21,6 +21,7 @@ services:
             - "${PORT}"
         networks:
             - docker
+
 networks:
     docker:
         external: true
