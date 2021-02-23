@@ -1,6 +1,6 @@
 @mixin items-per-row($items) {
     display: inline-block;
-    width: "calc((100% / %s) - (%srem - 1rem) / %s)" % ($items $items $items);
+    width: calc((100% / #{$items}) - (#{$items}rem - 1rem) / #{$items});
     margin-right: 1rem;
     margin-bottom: 1rem;
 
