@@ -1,6 +1,6 @@
 # Resaic
 
-## Project setup
+## Setup
 
 1. Install node, npm, clone this repository, then install the dependencies
 
@@ -48,40 +48,3 @@ yarn build-dev
 ```
 
 6. Visit `http://localhost:3000` to see the app running.
-
-### Project scripts
-
-```
-// build app for development
-yarn build-dev
-
-// build app for production
-yarn build-prod
-
-// build server
-yarn build-server
-
-// lint app
-yarn lint-app
-
-// lint and fix app
-yarn lint-app-fix
-
-// lint server
-yarn lint-server
-
-// lint and fix server
-yarn lint-server-fix
-
-// build server watcher
-yarn server
-
-// build server and run
-yarn server-static
-
-// run tests on app
-yarn test-app
-
-// run tests on server
-yarn test-server
-```

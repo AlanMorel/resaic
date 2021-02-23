@@ -26,6 +26,5 @@ module.exports = {
     },
     chainWebpack: config => {
         config.resolve.alias.set("@", path.resolve(__dirname, "app"));
-        config.module.rules.delete("eslint");
     }
 };
