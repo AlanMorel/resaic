@@ -59,7 +59,7 @@
     import axios from "axios";
 
     import CenteredPage from "@/components/utility/CenteredPage";
-    import ProgressButton from "@/components/utility/ProgressButton";
+    import ProgressButton from "@/components/vida/ProgressButton";
     import { FormInput } from "@alanmorel/vida";
 
     export default {
@@ -117,7 +117,10 @@
         align-items: center;
 
         input[type="checkbox"] {
+            width: auto;
             margin-right: 0.75rem;
+            width: 1.125rem;
+            height: 1.125rem;
         }
     }
 </style>

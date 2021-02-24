@@ -80,11 +80,11 @@
     import axios from "axios";
 
     import CenteredPage from "@/components/utility/CenteredPage";
-    import ProgressButton from "@/components/utility/ProgressButton";
+    import ProgressButton from "@/components/vida/ProgressButton";
     import IconToggler from "@/components/utility/IconToggler";
-    import StrengthIndicator from "@/components/utility/StrengthIndicator";
+    import StrengthIndicator from "@/components/vida/StrengthIndicator";
     import { FormInput } from "@alanmorel/vida";
-    import ValidationList from "@/components/utility/ValidationList";
+    import ValidationList from "@/components/vida/ValidationList";
 
     import validation from "@/mixins/validation";
 

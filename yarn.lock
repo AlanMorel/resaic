@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@alanmorel/vida@0.0.15":
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/@alanmorel/vida/-/vida-0.0.15.tgz#ad047cd3837dc35125cf6e52c451900bf1793946"
-  integrity sha512-o7lED8NhK3XsgyufuG6Y2VeoYHHUXb2P7FZZaLJzdMYU0f/VqZQcmsKboGsxvFoIoJWDnlZB9QftKpnFb9RM5Q==
+"@alanmorel/vida@^0.0.24":
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/@alanmorel/vida/-/vida-0.0.24.tgz#a6f27e04fd84fa8934748a090bc1fc08a6932ec8"
+  integrity sha512-iIO8sjQ0KhaumFEltiFcA4x9+xnbO16dWGAc7FQ1JfdqxDf+g7x5pFfrbDpQ8WdaJXazB5+W/63NtMkPvjM+2w==
   dependencies:
     core-js "^3.9.0"
     vue "^3.0.0-rc.13"

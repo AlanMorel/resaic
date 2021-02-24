@@ -47,7 +47,7 @@
 
     import Hero from "@/components/utility/Hero";
     import { FormInput } from "@alanmorel/vida";
-    import ProgressButton from "@/components/utility/ProgressButton";
+    import ProgressButton from "@/components/vida/ProgressButton";
 
     export default {
         name: "ContactUs",

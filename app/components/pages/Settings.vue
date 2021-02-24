@@ -61,7 +61,7 @@
     import axios from "axios";
 
     import { FormInput } from "@alanmorel/vida";
-    import ProgressButton from "@/components/utility/ProgressButton";
+    import ProgressButton from "@/components/vida/ProgressButton";
 
     import validation from "@/mixins/validation";
 
