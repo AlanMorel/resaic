@@ -18,7 +18,8 @@ module.exports = {
                 baseIndent: 1,
                 switchCase: 1
             }
-        ]
+        ],
+        "no-undef": 1
     },
     overrides: [
         {

@@ -60,7 +60,7 @@
 <script>
     import axios from "axios";
 
-    import FormInput from "@/components/utility/FormInput";
+    import { FormInput } from "@alanmorel/vida";
     import ProgressButton from "@/components/utility/ProgressButton";
 
     import validation from "@/mixins/validation";

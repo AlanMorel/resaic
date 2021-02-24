@@ -60,7 +60,7 @@
 
     import CenteredPage from "@/components/utility/CenteredPage";
     import ProgressButton from "@/components/utility/ProgressButton";
-    import FormInput from "@/components/utility/FormInput";
+    import { FormInput } from "@alanmorel/vida";
 
     export default {
         name: "Login",

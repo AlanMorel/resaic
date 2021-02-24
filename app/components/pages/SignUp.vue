@@ -83,7 +83,7 @@
     import ProgressButton from "@/components/utility/ProgressButton";
     import IconToggler from "@/components/utility/IconToggler";
     import StrengthIndicator from "@/components/utility/StrengthIndicator";
-    import FormInput from "@/components/utility/FormInput";
+    import { FormInput } from "@alanmorel/vida";
     import ValidationList from "@/components/utility/ValidationList";
 
     import validation from "@/mixins/validation";
