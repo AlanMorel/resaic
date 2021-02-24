@@ -50,7 +50,7 @@
                     />
                 </FormInput>
                 <div class="settings__button-container">
-                    <ProgressButton value="Update" :progress="progress" />
+                    <ProgressButton text="Update" :progress="progress" />
                 </div>
             </form>
         </div>

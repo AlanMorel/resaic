@@ -6,7 +6,8 @@
 </template>
 
 <script>
-    import { EyeClosedIcon, EyeOpenedIcon } from "@alanmorel/vida";
+    import EyeClosedIcon from "@/components/vida/icons/EyeClosedIcon";
+    import EyeOpenedIcon from "@/components/vida/icons/EyeOpenedIcon";
 
     export default {
         name: "IconToggler",

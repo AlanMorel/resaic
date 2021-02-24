@@ -36,7 +36,7 @@
                         required
                     ></textarea>
                 </FormInput>
-                <ProgressButton value="Send Message" :progress="progress" />
+                <ProgressButton text="Send Message" :progress="progress" />
             </form>
         </div>
     </div>

@@ -35,7 +35,7 @@
                     {{ error }}
                 </div>
                 <div class="centered-page__button-container">
-                    <ProgressButton value="Log In" :progress="progress" />
+                    <ProgressButton text="Log In" :progress="progress" />
                 </div>
             </form>
         </template>

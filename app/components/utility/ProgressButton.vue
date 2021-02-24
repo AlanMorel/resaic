@@ -1,7 +1,7 @@
 <template>
     <div class="progress-button" :class="{ progress: progress }">
         <SpinnerIcon theme="light" v-if="progress" />
-        <input type="submit" :value="value" class="progress-button__input" @click="$emit('click')" />
+        <input type="submit" :value="text" class="progress-button__input" @click="$emit('click')" />
     </div>
 </template>
 
@@ -18,7 +18,7 @@
                 type: Boolean,
                 required: true
             },
-            value: {
+            text: {
                 type: String,
                 required: true
             }

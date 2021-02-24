@@ -2,7 +2,7 @@
     <CenteredPage class="sign-up">
         <template #prompt>
             <span>
-                Join the fastest growing community of photographers in the world!
+                Join the fastest growing community of photographers in the world
             </span>
         </template>
         <template #content>
@@ -56,7 +56,7 @@
                     {{ error }}
                 </div>
                 <div class="centered-page__button-container">
-                    <ProgressButton value="Sign up" :progress="progress" />
+                    <ProgressButton text="Sign up" :progress="progress" />
                 </div>
             </form>
         </template>
