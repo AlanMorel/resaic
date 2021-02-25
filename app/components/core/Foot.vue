@@ -33,26 +33,26 @@
             Logo
         },
         setup() {
-            const footerLinks = [
-                {
-                    text: "Terms of Service",
-                    link: "terms-of-service"
-                },
-                {
-                    text: "Privacy Policy",
-                    link: "privacy-policy"
-                },
-                {
-                    text: "Contact Us",
-                    link: "contact-us"
-                },
-                {
-                    text: "Changelog",
-                    link: "changelog"
-                }
-            ];
-
-            return { footerLinks };
+            return {
+                footerLinks: [
+                    {
+                        text: "Terms of Service",
+                        link: "terms-of-service"
+                    },
+                    {
+                        text: "Privacy Policy",
+                        link: "privacy-policy"
+                    },
+                    {
+                        text: "Contact Us",
+                        link: "contact-us"
+                    },
+                    {
+                        text: "Changelog",
+                        link: "changelog"
+                    }
+                ]
+            };
         }
     };
 </script>

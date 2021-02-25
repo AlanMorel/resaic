@@ -44,7 +44,7 @@
 
 <script>
     import axios from "axios";
-
+    import { reactive } from "vue";
     import Hero from "@/components/utility/Hero";
     import { FormInput } from "@alanmorel/vida";
     import ProgressButton from "@/components/vida/ProgressButton";
@@ -59,12 +59,12 @@
         setup() {
             document.title = "Contact Us | Resaic";
 
-            return {
+            return reactive({
                 name: "",
                 email: "",
                 message: "",
                 progress: false
-            };
+            });
         },
         methods: {
             sendMessage() {

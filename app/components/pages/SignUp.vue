@@ -78,6 +78,7 @@
 
 <script>
     import axios from "axios";
+    import { reactive } from "vue";
 
     import CenteredPage from "@/components/utility/CenteredPage";
     import ProgressButton from "@/components/vida/ProgressButton";
@@ -102,7 +103,7 @@
         setup() {
             document.title = "Sign Up | Resaic";
 
-            return {
+            return reactive({
                 username: "",
                 email: "",
                 password: "",
@@ -111,7 +112,7 @@
                 error: "",
                 usernameAvailability: {},
                 progress: false
-            };
+            });
         },
         computed: {
             usernameErrors() {

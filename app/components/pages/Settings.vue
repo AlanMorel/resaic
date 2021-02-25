@@ -59,6 +59,7 @@
 
 <script>
     import axios from "axios";
+    import { reactive } from "vue";
     import { useStore } from "vuex";
     import { FormInput } from "@alanmorel/vida";
     import ProgressButton from "@/components/vida/ProgressButton";
@@ -84,14 +85,14 @@
             const city = user.city || "";
             const country = user.country || "";
 
-            return {
+            return reactive({
                 username,
                 email,
                 bio,
                 city,
                 country,
                 progress: false
-            };
+            });
         },
         methods: {
             updateSettings() {
