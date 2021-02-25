@@ -32,8 +32,8 @@
         components: {
             Logo
         },
-        data: () => ({
-            footerLinks: [
+        setup() {
+            const footerLinks = [
                 {
                     text: "Terms of Service",
                     link: "terms-of-service"
@@ -50,8 +50,10 @@
                     text: "Changelog",
                     link: "changelog"
                 }
-            ]
-        })
+            ];
+
+            return { footerLinks };
+        }
     };
 </script>
 

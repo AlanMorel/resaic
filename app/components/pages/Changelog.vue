@@ -23,7 +23,7 @@
             Hero,
             Log
         },
-        created() {
+        setup() {
             document.title = "Changelog | Resaic";
         }
     };

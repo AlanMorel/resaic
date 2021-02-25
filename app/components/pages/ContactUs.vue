@@ -56,14 +56,15 @@
             FormInput,
             ProgressButton
         },
-        data: () => ({
-            name: "",
-            email: "",
-            message: "",
-            progress: false
-        }),
-        created() {
+        setup() {
             document.title = "Contact Us | Resaic";
+
+            return {
+                name: "",
+                email: "",
+                message: "",
+                progress: false
+            };
         },
         methods: {
             sendMessage() {

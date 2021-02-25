@@ -69,15 +69,16 @@
             ProgressButton,
             FormInput
         },
-        data: () => ({
-            identifier: "",
-            password: "",
-            error: "",
-            rememberMe: false,
-            progress: false
-        }),
-        created() {
+        setup() {
             document.title = "Login | Resaic";
+
+            return {
+                identifier: "",
+                password: "",
+                error: "",
+                rememberMe: false,
+                progress: false
+            };
         },
         methods: {
             login() {

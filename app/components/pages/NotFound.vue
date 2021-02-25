@@ -18,7 +18,7 @@
         components: {
             Hero
         },
-        created() {
+        setup() {
             document.title = "Page Not Found | Resaic";
         }
     };

@@ -59,7 +59,7 @@
 
 <script>
     import axios from "axios";
-
+    import { useStore } from "vuex";
     import { FormInput } from "@alanmorel/vida";
     import ProgressButton from "@/components/vida/ProgressButton";
 
@@ -72,26 +72,26 @@
             ProgressButton
         },
         mixins: [validation],
-        data: () => ({
-            username: "",
-            email: "",
-            bio: "",
-            city: "",
-            country: "",
-            progress: false
-        }),
-        created() {
+        setup() {
             document.title = "Settings | Resaic";
-            this.username = this.user.username;
-            this.email = this.user.email;
-            this.bio = this.user.bio || "";
-            this.city = this.user.city || "";
-            this.country = this.user.country || "";
-        },
-        computed: {
-            user() {
-                return this.$store.state.user;
-            }
+
+            const store = useStore();
+            const user = store.state.user;
+
+            const username = user.username;
+            const email = user.email;
+            const bio = user.bio || "";
+            const city = user.city || "";
+            const country = user.country || "";
+
+            return {
+                username,
+                email,
+                bio,
+                city,
+                country,
+                progress: false
+            };
         },
         methods: {
             updateSettings() {

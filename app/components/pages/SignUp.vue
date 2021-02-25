@@ -99,18 +99,19 @@
             ValidationList
         },
         mixins: [validation],
-        data: () => ({
-            username: "",
-            email: "",
-            password: "",
-            showPassword: false,
-            legalAgreement: false,
-            error: "",
-            usernameAvailability: {},
-            progress: false
-        }),
-        created() {
+        setup() {
             document.title = "Sign Up | Resaic";
+
+            return {
+                username: "",
+                email: "",
+                password: "",
+                showPassword: false,
+                legalAgreement: false,
+                error: "",
+                usernameAvailability: {},
+                progress: false
+            };
         },
         computed: {
             usernameErrors() {

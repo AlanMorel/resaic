@@ -14,7 +14,7 @@
         components: {
             Hero
         },
-        created() {
+        setup() {
             document.title = "Privacy Policy | Resaic";
         }
     };
