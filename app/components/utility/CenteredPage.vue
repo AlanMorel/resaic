@@ -23,14 +23,16 @@
 </template>
 
 <script>
+    import { defineComponent } from "vue";
+
     import Logo from "@/components/core/Logo";
 
-    export default {
+    export default defineComponent({
         name: "CenteredPage",
         components: {
             Logo
         }
-    };
+    });
 </script>
 
 <style lang="scss">

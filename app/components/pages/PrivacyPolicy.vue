@@ -7,9 +7,11 @@
 </template>
 
 <script>
+    import { defineComponent } from "vue";
+
     import Hero from "@/components/utility/Hero";
 
-    export default {
+    export default defineComponent({
         name: "PrivacyPolicy",
         components: {
             Hero
@@ -17,5 +19,5 @@
         setup() {
             document.title = "Privacy Policy | Resaic";
         }
-    };
+    });
 </script>

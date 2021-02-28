@@ -44,12 +44,13 @@
 
 <script>
     import axios from "axios";
-    import { reactive } from "vue";
-    import Hero from "@/components/utility/Hero";
+    import { defineComponent, reactive } from "vue";
     import { FormInput } from "@alanmorel/vida";
+
+    import Hero from "@/components/utility/Hero";
     import ProgressButton from "@/components/vida/ProgressButton";
 
-    export default {
+    export default defineComponent({
         name: "ContactUs",
         components: {
             Hero,
@@ -98,7 +99,7 @@
                     });
             }
         }
-    };
+    });
 </script>
 
 <style lang="scss">

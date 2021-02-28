@@ -7,12 +7,14 @@
 </template>
 
 <script>
+    import { defineComponent } from "vue";
+
     import Hero from "@/components/utility/Hero";
 
-    export default {
+    export default defineComponent({
         name: "Home",
         components: {
             Hero
         }
-    };
+    });
 </script>

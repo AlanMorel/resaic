@@ -10,7 +10,9 @@
 </template>
 
 <script>
-    export default {
+    import { defineComponent } from "vue";
+
+    export default defineComponent({
         name: "Hero",
         props: {
             image: {
@@ -18,7 +20,7 @@
                 required: true
             }
         }
-    };
+    });
 </script>
 
 <style lang="scss">

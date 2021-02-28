@@ -14,10 +14,12 @@
 </template>
 
 <script>
+    import { defineComponent } from "vue";
+
     import Hero from "@/components/utility/Hero";
     import Log from "@/components/utility/Log";
 
-    export default {
+    export default defineComponent({
         name: "Changelog",
         components: {
             Hero,
@@ -26,7 +28,7 @@
         setup() {
             document.title = "Changelog | Resaic";
         }
-    };
+    });
 </script>
 
 <style lang="scss">

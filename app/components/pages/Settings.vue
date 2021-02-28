@@ -59,14 +59,14 @@
 
 <script>
     import axios from "axios";
-    import { reactive } from "vue";
+    import { defineComponent, reactive } from "vue";
     import { useStore } from "vuex";
     import { FormInput } from "@alanmorel/vida";
-    import ProgressButton from "@/components/vida/ProgressButton";
 
+    import ProgressButton from "@/components/vida/ProgressButton";
     import validation from "@/mixins/validation";
 
-    export default {
+    export default defineComponent({
         name: "Settings",
         components: {
             FormInput,
@@ -116,7 +116,7 @@
                     });
             }
         }
-    };
+    });
 </script>
 
 <style lang="scss">

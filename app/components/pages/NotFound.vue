@@ -11,9 +11,11 @@
 </template>
 
 <script>
+    import { defineComponent } from "vue";
+
     import Hero from "@/components/utility/Hero";
 
-    export default {
+    export default defineComponent({
         name: "NotFound",
         components: {
             Hero
@@ -21,7 +23,7 @@
         setup() {
             document.title = "Page Not Found | Resaic";
         }
-    };
+    });
 </script>
 
 <style lang="scss">

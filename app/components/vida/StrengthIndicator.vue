@@ -3,9 +3,11 @@
 </template>
 
 <script>
+    import { defineComponent } from "vue";
+
     import { StrengthIndicator as VidaStrengthIndicator } from "@alanmorel/vida";
 
-    export default {
+    export default defineComponent({
         name: "StrengthIndicator",
         components: {
             VidaStrengthIndicator
@@ -16,5 +18,5 @@
                 required: true
             }
         }
-    };
+    });
 </script>

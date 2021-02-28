@@ -10,14 +10,16 @@
 </template>
 
 <script>
+    import { defineComponent } from "vue";
+
     import { Vida } from "@alanmorel/vida";
 
-    export default {
+    export default defineComponent({
         name: "App",
         components: {
             Vida
         }
-    };
+    });
 </script>
 
 <style lang="scss">

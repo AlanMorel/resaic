@@ -78,18 +78,18 @@
 
 <script>
     import axios from "axios";
-    import { reactive } from "vue";
+    import { defineComponent, reactive } from "vue";
+    import { FormInput } from "@alanmorel/vida";
 
     import CenteredPage from "@/components/utility/CenteredPage";
     import ProgressButton from "@/components/vida/ProgressButton";
     import IconToggler from "@/components/utility/IconToggler";
     import StrengthIndicator from "@/components/vida/StrengthIndicator";
-    import { FormInput } from "@alanmorel/vida";
     import ValidationList from "@/components/vida/ValidationList";
 
     import validation from "@/mixins/validation";
 
-    export default {
+    export default defineComponent({
         name: "SignUp",
         components: {
             CenteredPage,
@@ -212,7 +212,7 @@
                     });
             }
         }
-    };
+    });
 </script>
 
 <style lang="scss">

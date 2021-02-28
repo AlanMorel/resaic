@@ -3,9 +3,11 @@
 </template>
 
 <script>
+    import { defineComponent } from "vue";
+
     import { ValidationList as VidaValidationList } from "@alanmorel/vida";
 
-    export default {
+    export default defineComponent({
         name: "ValidationList",
         components: {
             VidaValidationList
@@ -18,7 +20,7 @@
                 type: Array
             }
         }
-    };
+    });
 </script>
 
 <style lang="scss">

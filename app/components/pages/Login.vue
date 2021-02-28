@@ -57,13 +57,13 @@
 
 <script>
     import axios from "axios";
-    import { reactive } from "vue";
+    import { defineComponent, reactive } from "vue";
+    import { FormInput } from "@alanmorel/vida";
 
     import CenteredPage from "@/components/utility/CenteredPage";
     import ProgressButton from "@/components/vida/ProgressButton";
-    import { FormInput } from "@alanmorel/vida";
 
-    export default {
+    export default defineComponent({
         name: "Login",
         components: {
             CenteredPage,
@@ -110,7 +110,7 @@
                     });
             }
         }
-    };
+    });
 </script>
 
 <style lang="scss">

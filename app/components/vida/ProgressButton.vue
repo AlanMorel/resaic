@@ -3,9 +3,11 @@
 </template>
 
 <script>
+    import { defineComponent } from "vue";
+
     import { ProgressButton as VidaProgressButton } from "@alanmorel/vida";
 
-    export default {
+    export default defineComponent({
         name: "ProgressButton",
         components: {
             VidaProgressButton
@@ -20,7 +22,7 @@
                 required: true
             }
         }
-    };
+    });
 </script>
 
 <style lang="scss"></style>

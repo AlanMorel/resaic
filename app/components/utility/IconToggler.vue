@@ -6,10 +6,12 @@
 </template>
 
 <script>
+    import { defineComponent } from "vue";
+
     import EyeClosedIcon from "@/components/vida/icons/EyeClosedIcon";
     import EyeOpenedIcon from "@/components/vida/icons/EyeOpenedIcon";
 
-    export default {
+    export default defineComponent({
         name: "IconToggler",
         components: {
             EyeClosedIcon,
@@ -34,7 +36,7 @@
                 this.$emit("update:modelValue", !this.modelValue);
             }
         }
-    };
+    });
 </script>
 
 <style lang="scss">

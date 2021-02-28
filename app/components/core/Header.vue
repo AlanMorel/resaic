@@ -5,14 +5,16 @@
 </template>
 
 <script>
+    import { defineComponent } from "vue";
+
     import Nav from "@/components/core/Nav";
 
-    export default {
+    export default defineComponent({
         name: "Header",
         components: {
             Nav
         }
-    };
+    });
 </script>
 
 <style lang="scss">

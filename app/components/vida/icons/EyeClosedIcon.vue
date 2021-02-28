@@ -3,14 +3,16 @@
 </template>
 
 <script>
+    import { defineComponent } from "vue";
+
     import { EyeClosedIcon as VidaEyeClosedIcon } from "@alanmorel/vida";
 
-    export default {
+    export default defineComponent({
         name: "EyeClosedIcon",
         components: {
             VidaEyeClosedIcon
         }
-    };
+    });
 </script>
 
 <style lang="scss">

@@ -7,14 +7,16 @@
 </template>
 
 <script>
+    import { defineComponent } from "vue";
+
     import Header from "@/components/core/Header";
     import Foot from "@/components/core/Foot";
 
-    export default {
+    export default defineComponent({
         name: "Main",
         components: {
             Header,
             Foot
         }
-    };
+    });
 </script>
