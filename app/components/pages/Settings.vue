@@ -59,12 +59,13 @@
 
 <script>
     import axios from "axios";
-    import { defineComponent, reactive } from "vue";
+    import { defineComponent, reactive, toRefs } from "vue";
     import { useStore } from "vuex";
     import { FormInput } from "@alanmorel/vida";
 
     import ProgressButton from "@/components/vida/ProgressButton";
-    import validation from "@/mixins/validation";
+
+    import useValidation from "@/mixins/validation";
 
     export default defineComponent({
         name: "Settings",
@@ -72,7 +73,6 @@
             FormInput,
             ProgressButton
         },
-        mixins: [validation],
         setup() {
             document.title = "Settings | Resaic";
 
@@ -85,7 +85,7 @@
             const city = user.city || "";
             const country = user.country || "";
 
-            return reactive({
+            const data = reactive({
                 username,
                 email,
                 bio,
@@ -93,6 +93,13 @@
                 country,
                 progress: false
             });
+
+            const validation = useValidation();
+
+            return {
+                ...toRefs(data),
+                ...validation
+            };
         },
         methods: {
             updateSettings() {

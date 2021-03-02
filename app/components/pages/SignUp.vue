@@ -78,7 +78,7 @@
 
 <script>
     import axios from "axios";
-    import { defineComponent, reactive } from "vue";
+    import { defineComponent, reactive, toRefs } from "vue";
     import { FormInput } from "@alanmorel/vida";
 
     import CenteredPage from "@/components/utility/CenteredPage";
@@ -87,7 +87,7 @@
     import StrengthIndicator from "@/components/vida/StrengthIndicator";
     import ValidationList from "@/components/vida/ValidationList";
 
-    import validation from "@/mixins/validation";
+    import useValidation from "@/mixins/validation";
 
     export default defineComponent({
         name: "SignUp",
@@ -99,11 +99,10 @@
             FormInput,
             ValidationList
         },
-        mixins: [validation],
         setup() {
             document.title = "Sign Up | Resaic";
 
-            return reactive({
+            const data = reactive({
                 username: "",
                 email: "",
                 password: "",
@@ -113,6 +112,13 @@
                 usernameAvailability: {},
                 progress: false
             });
+
+            const validation = useValidation();
+
+            return {
+                ...toRefs(data),
+                ...validation
+            };
         },
         computed: {
             usernameErrors() {
