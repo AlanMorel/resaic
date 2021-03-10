@@ -1,12 +1,8 @@
 import { createStore } from "vuex";
 
-let state = {
+let state = {};
 
-}
-
-let getters = {
-
-}
+let getters = {};
 
 let mutations = {
     UPDATE_USER: (state, payload) => {
@@ -14,15 +10,15 @@ let mutations = {
         console.log(payload);
         state.user = payload;
     }
-}
+};
 
 let actions = {
     updateUser: (context, payload) => {
         context.commit("UPDATE_USER", payload);
     }
-}
+};
 
-state = Object.assign({}, state, data)
+state = Object.assign({}, state, data);
 
 const store = createStore({
     state,
@@ -31,4 +27,4 @@ const store = createStore({
     actions
 });
 
-export default store
+export default store;

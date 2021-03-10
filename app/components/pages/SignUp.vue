@@ -80,6 +80,7 @@
     import axios from "axios";
     import { defineComponent, reactive, toRefs } from "vue";
     import { FormInput } from "@alanmorel/vida";
+    import { useRouter } from "vue-router";
 
     import CenteredPage from "@/components/utility/CenteredPage";
     import ProgressButton from "@/components/vida/ProgressButton";
@@ -102,6 +103,8 @@
         setup() {
             document.title = "Sign Up | Resaic";
 
+            const router = useRouter();
+
             const data = reactive({
                 username: "",
                 email: "",
@@ -113,11 +116,45 @@
                 progress: false
             });
 
-            const validation = useValidation();
+            const signup = async () => {
+                if (!data.legalAgreement) {
+                    data.error = "You must agree to our Privacy Policy and Terms of Service.";
+                    return;
+                }
+
+                if (
+                    data.validatePassword(data.password).length ||
+                    data.validateUsername(data.username).length ||
+                    data.validateEmail(data.email).length ||
+                    data.progress
+                ) {
+                    return;
+                }
+
+                data.progress = true;
+                data.error = "";
+
+                const payload = {
+                    username: data.username,
+                    email: data.email,
+                    password: data.password
+                };
+
+                const response = await axios.post("/api/register", payload);
+
+                data.progress = false;
+
+                if (response.data.success) {
+                    router.push({ path: "/login" });
+                } else {
+                    data.error = response.data.error;
+                }
+            };
 
             return {
                 ...toRefs(data),
-                ...validation
+                signup,
+                ...useValidation()
             };
         },
         computed: {
@@ -149,44 +186,6 @@
             }
         },
         methods: {
-            signup() {
-                if (!this.legalAgreement) {
-                    this.error = "You must agree to our Privacy Policy and Terms of Service.";
-                    return;
-                }
-
-                if (
-                    this.validatePassword(this.password).length ||
-                    this.validateUsername(this.username).length ||
-                    this.validateEmail(this.email).length ||
-                    this.progress
-                ) {
-                    return;
-                }
-
-                this.progress = true;
-                this.error = "";
-
-                const data = {
-                    username: this.username,
-                    email: this.email,
-                    password: this.password
-                };
-                axios
-                    .post("/api/register", data)
-                    .then(response => {
-                        this.progress = false;
-                        if (response.data.success) {
-                            this.$router.push({ path: "/login" });
-                        } else {
-                            this.error = response.data.error;
-                        }
-                    })
-                    .catch(error => {
-                        this.progress = false;
-                        console.log(error);
-                    });
-            },
             usernameCheck() {
                 this.usernameAvailability = {};
                 if (!this.username.length) {
@@ -195,11 +194,11 @@
                 if (this.validateUsername(this.username).length) {
                     return;
                 }
-                const data = {
+                const payload = {
                     username: this.username
                 };
                 axios
-                    .post("/api/check-username", data)
+                    .post("/api/check-username", payload)
                     .then(response => {
                         if (response.data.success) {
                             this.usernameAvailability = {

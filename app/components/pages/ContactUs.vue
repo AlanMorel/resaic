@@ -44,7 +44,7 @@
 
 <script>
     import axios from "axios";
-    import { defineComponent, reactive } from "vue";
+    import { defineComponent, reactive, toRefs } from "vue";
     import { FormInput } from "@alanmorel/vida";
 
     import Hero from "@/components/utility/Hero";
@@ -60,43 +60,43 @@
         setup() {
             document.title = "Contact Us | Resaic";
 
-            return reactive({
+            const data = reactive({
                 name: "",
                 email: "",
                 message: "",
                 progress: false
             });
+
+            return {
+                ...toRefs(data)
+            };
         },
         methods: {
-            sendMessage() {
+            async sendMessage() {
                 if (this.progress || !this.name.length || !this.email.length || !this.message.length) {
                     return;
                 }
 
-                const data = {
+                const payload = {
                     name: this.name,
                     email: this.email,
                     message: this.message
                 };
 
                 this.progress = true;
-                axios
-                    .post("/api/contact", data)
-                    .then(response => {
-                        this.progress = false;
-                        if (response.data.success) {
-                            // TODO display success
-                            this.name = "";
-                            this.email = "";
-                            this.message = "";
-                        } else {
-                            // TODO display error
-                        }
-                    })
-                    .catch(error => {
-                        this.progress = false;
-                        console.log(error);
-                    });
+
+                const response = await axios.post("/api/contact", payload);
+
+                this.progress = false;
+
+                if (response.data.success) {
+                    // TODO display success
+                    this.name = "";
+                    this.email = "";
+                    this.message = "";
+                } else {
+                    // TODO display error
+                }
             }
         }
     });

@@ -94,33 +94,26 @@
                 progress: false
             });
 
-            const validation = useValidation();
-
             return {
                 ...toRefs(data),
-                ...validation
+                ...useValidation()
             };
         },
         methods: {
-            updateSettings() {
+            async updateSettings() {
                 this.progress = true;
 
-                const data = {
+                const payload = {
                     bio: this.bio,
                     city: this.city,
                     country: this.country
                 };
 
-                axios
-                    .put("/api/settings", data)
-                    .then(response => {
-                        this.progress = false;
-                        console.log(response.data);
-                    })
-                    .catch(error => {
-                        this.progress = false;
-                        console.log(error);
-                    });
+                const response = await axios.put("/api/settings", payload);
+
+                this.progress = false;
+
+                console.log(response.data);
             }
         }
     });

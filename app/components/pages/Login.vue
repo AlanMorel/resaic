@@ -57,8 +57,10 @@
 
 <script>
     import axios from "axios";
-    import { defineComponent, reactive } from "vue";
     import { FormInput } from "@alanmorel/vida";
+    import { defineComponent, reactive, toRefs } from "vue";
+    import { useRouter } from "vue-router";
+    import { useStore } from "vuex";
 
     import CenteredPage from "@/components/utility/CenteredPage";
     import ProgressButton from "@/components/vida/ProgressButton";
@@ -72,43 +74,45 @@
         },
         setup() {
             document.title = "Login | Resaic";
+            const store = useStore();
+            const router = useRouter();
 
-            return reactive({
+            const data = reactive({
                 identifier: "",
                 password: "",
                 error: "",
                 rememberMe: false,
                 progress: false
             });
-        },
-        methods: {
-            login() {
-                this.progress = true;
-                this.error = "";
 
-                const data = {
-                    identifier: this.identifier,
-                    password: this.password,
-                    rememberMe: this.rememberMe
+            const login = async () => {
+                data.progress = true;
+                data.error = "";
+
+                const payload = {
+                    identifier: data.identifier,
+                    password: data.password,
+                    rememberMe: data.rememberMe
                 };
-                axios
-                    .post("/api/login", data)
-                    .then(response => {
-                        this.progress = false;
-                        if (response.data.success) {
-                            const user = response.data.user;
-                            user.loggedIn = true;
-                            this.$store.dispatch("updateUser", user);
-                            this.$router.push({ path: "/" });
-                        } else {
-                            this.error = response.data.error;
-                        }
-                    })
-                    .catch(error => {
-                        this.progress = false;
-                        console.log(error);
-                    });
-            }
+
+                const response = await axios.post("/api/login", payload);
+
+                data.progress = false;
+
+                if (response.data.success) {
+                    const user = response.data.user;
+                    user.loggedIn = true;
+                    store.dispatch("updateUser", user);
+                    router.push({ path: "/" });
+                } else {
+                    data.error = response.data.error;
+                }
+            };
+
+            return {
+                ...toRefs(data),
+                login
+            };
         }
     });
 </script>

@@ -28,7 +28,8 @@
 
 <script>
     import axios from "axios";
-    import { defineComponent } from "vue";
+    import { defineComponent, computed } from "vue";
+    import { useStore } from "vuex";
 
     import Logo from "@/components/core/Logo";
 
@@ -37,30 +38,28 @@
         components: {
             Logo
         },
-        computed: {
-            user() {
-                return this.$store.state.user;
-            }
-        },
-        methods: {
-            logout() {
-                axios
-                    .post("/api/logout")
-                    .then(response => {
-                        if (response.data.success) {
-                            const user = {
-                                loggedIn: false
-                            };
-                            this.$store.dispatch("updateUser", user);
-                        } else {
-                            console.log(response.data.error);
-                        }
-                    })
-                    .catch(error => {
-                        this.progress = false;
-                        console.log(error);
-                    });
-            }
+        setup() {
+            const store = useStore();
+
+            const logout = async () => {
+                const response = await axios.post("/api/logout");
+
+                if (response.data.success) {
+                    const user = {
+                        loggedIn: false
+                    };
+                    store.dispatch("updateUser", user);
+                } else {
+                    console.log(response.data.error);
+                }
+            };
+
+            const user = computed(() => store.state.user);
+
+            return {
+                user,
+                logout
+            };
         }
     });
 </script>
