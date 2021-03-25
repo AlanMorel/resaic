@@ -186,7 +186,7 @@
             }
         },
         methods: {
-            usernameCheck() {
+            async usernameCheck() {
                 this.usernameAvailability = {};
                 if (!this.username.length) {
                     return;
@@ -197,24 +197,20 @@
                 const payload = {
                     username: this.username
                 };
-                axios
-                    .post("/api/check-username", payload)
-                    .then(response => {
-                        if (response.data.success) {
-                            this.usernameAvailability = {
-                                type: "success",
-                                message: "This username is available"
-                            };
-                        } else {
-                            this.usernameAvailability = {
-                                type: "error",
-                                message: response.data.error
-                            };
-                        }
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    });
+
+                const response = await axios.post("/api/check-username", payload);
+
+                if (response.data.success) {
+                    this.usernameAvailability = {
+                        type: "success",
+                        message: "This username is available"
+                    };
+                } else {
+                    this.usernameAvailability = {
+                        type: "error",
+                        message: response.data.error
+                    };
+                }
             }
         }
     });
