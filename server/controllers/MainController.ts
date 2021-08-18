@@ -6,7 +6,8 @@ import RequestWithUser from "../database/interfaces";
 const app = {
     slug: "resaic",
     name: "Resaic",
-    domain: "resaic.co"
+    domain: "resaic.co",
+    ...config
 };
 
 const metaInfo = {
@@ -15,10 +16,9 @@ const metaInfo = {
     image: "image"
 };
 
-const styles = config.env === "production" ? fs.readFileSync(config.projectRoot + "dist/production/css/index.css") : "";
+const styles = config.env === "production" ? fs.readFileSync(config.root + "dist/production/css/index.css") : "";
 
 export default (req: RequestWithUser, res: Response): void => {
-
     const user = req.user && req.isAuthenticated() ? req.user.simplify() : null;
 
     const store = {

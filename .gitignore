@@ -10,3 +10,4 @@ dist
 
 # editor directories and files
 .vscode
+version.txt

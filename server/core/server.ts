@@ -29,7 +29,7 @@ app.use(
 );
 app.use(
     session({
-        secret: config.sessionSecret,
+        secret: config.secret,
         resave: false,
         saveUninitialized: false,
         store: store
@@ -45,4 +45,4 @@ Database.sync();
 
 app.listen(config.port);
 
-console.log(`Server is running at http://localhost:${config.port}`);
+console.log(`Resaic v${config.version} is running at ${config.origin} in ${config.env} mode`);

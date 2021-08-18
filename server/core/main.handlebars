@@ -76,8 +76,8 @@
         const data = JSON.parse(document.querySelector("#data").textContent);
         console.log(data);
     </script>
-    <script src="/dist/chunk-vendors.js"></script>
-    <script src="/dist/index.js"></script>
+    <script src="/dist/chunk-vendors.js?v={{ app.version }}"></script>
+    <script src="/dist/index.js?v={{ app.version }}"></script>
 </body>
 
 </html>

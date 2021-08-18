@@ -11,5 +11,5 @@ export default (app: Application): void => {
 
     app.engine("handlebars", handlebars(options));
     app.set("view engine", "handlebars");
-    app.set("views", config.projectRoot + "server/core");
+    app.set("views", config.root + "server/core");
 };
