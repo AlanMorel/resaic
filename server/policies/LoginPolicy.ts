@@ -1,7 +1,7 @@
+import { UserModel } from "@/database/models/User";
+import { accept, reject } from "@/helpers/PolicyHelper";
 import { NextFunction, Request, Response } from "express";
 import Passport from "passport";
-import { UserModel } from "../database/models/User";
-import { accept, reject } from "../helpers/PolicyHelper";
 
 export default async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     Passport.authenticate("local", (err, user: UserModel, info) => {

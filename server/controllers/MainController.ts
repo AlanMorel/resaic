@@ -1,13 +1,12 @@
+import RequestWithUser from "@/database/Interfaces";
 import { Response } from "express";
 import fs from "fs";
-import config from "../config";
-import RequestWithUser from "../database/interfaces";
+import Config from "../Config";
 
 const app = {
     slug: "resaic",
-    name: "Resaic",
     domain: "resaic.co",
-    ...config
+    ...Config
 };
 
 const metaInfo = {
@@ -16,7 +15,7 @@ const metaInfo = {
     image: "image"
 };
 
-const styles = config.env === "production" ? fs.readFileSync(config.root + "dist/production/css/index.css") : "";
+const styles = Config.env === "production" ? fs.readFileSync(Config.root + "dist/production/css/index.css") : "";
 
 export default (req: RequestWithUser, res: Response): void => {
     const user = req.user && req.isAuthenticated() ? req.user.simplify() : null;

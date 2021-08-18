@@ -1,9 +1,9 @@
+import { User } from "@/database/Database";
 import bcrypt from "bcrypt";
 import { Application } from "express";
 import Passport from "passport";
 import LocalStrategy from "passport-local";
 import { Op } from "sequelize";
-import { User } from "../database/database";
 
 export default (app: Application): void => {
     Passport.serializeUser((user: any, done: any) => {
@@ -24,30 +24,38 @@ export default (app: Application): void => {
             });
     });
 
-    Passport.use(new LocalStrategy.Strategy({
-        usernameField: "identifier"
-    }, async (identifier: string, password: string, done: any) => {
-        const user = await User.findOne({
-            where: {
-                [Op.or]: [{
-                    username: identifier
-                }, {
-                    email: identifier
-                }]
+    Passport.use(
+        new LocalStrategy.Strategy(
+            {
+                usernameField: "identifier"
+            },
+            async (identifier: string, password: string, done: any) => {
+                const user = await User.findOne({
+                    where: {
+                        [Op.or]: [
+                            {
+                                username: identifier
+                            },
+                            {
+                                email: identifier
+                            }
+                        ]
+                    }
+                });
+
+                if (!user) {
+                    return done("Incorrect username or password.");
+                }
+
+                const validPassword = await bcrypt.compare(password, user.password);
+                if (!validPassword) {
+                    return done("Incorrect username or password.");
+                }
+
+                return done(null, user);
             }
-        });
-
-        if (!user) {
-            return done("Incorrect username or password.");
-        }
-
-        const validPassword = await bcrypt.compare(password, user.password);
-        if (!validPassword) {
-            return done("Incorrect username or password.");
-        }
-
-        return done(null, user);
-    }));
+        )
+    );
 
     app.use(Passport.initialize());
     app.use(Passport.session());

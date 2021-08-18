@@ -1,6 +1,6 @@
+import Config from "@/Config";
 import { Application } from "express";
 import handlebars from "express-handlebars";
-import config from "../config";
 
 export default (app: Application): void => {
     const options = {
@@ -11,5 +11,5 @@ export default (app: Application): void => {
 
     app.engine("handlebars", handlebars(options));
     app.set("view engine", "handlebars");
-    app.set("views", config.root + "server/core");
+    app.set("views", Config.root + "server/core");
 };

@@ -1,6 +1,6 @@
+import { accept, isForbiddenUsername, reject } from "@/helpers/PolicyHelper";
 import { NextFunction, Request, Response } from "express";
 import Joi from "joi";
-import { accept, isForbiddenUsername, reject } from "../helpers/PolicyHelper";
 
 export default async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     if (isForbiddenUsername(req.body.username)) {
@@ -9,7 +9,10 @@ export default async (req: Request, res: Response, next: NextFunction): Promise<
     }
 
     const schema = Joi.object({
-        username: Joi.string().alphanum().required().min(4)
+        username: Joi.string()
+            .alphanum()
+            .required()
+            .min(4)
     });
 
     const { error } = schema.validate(req.body);

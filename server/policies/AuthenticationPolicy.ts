@@ -1,5 +1,5 @@
+import { accept, reject } from "@/helpers/PolicyHelper";
 import { NextFunction, Request, Response } from "express";
-import { accept, reject } from "../helpers/PolicyHelper";
 
 export default async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     if (!req.isAuthenticated()) {

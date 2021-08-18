@@ -3,6 +3,7 @@ import fs from "fs";
 
 dotenv.config();
 
+const name = "Resaic";
 const port = parseInt(process.env.PORT || "8083");
 const origin = process.env.ORIGIN || "http://localhost:" + port;
 const env = process.env.NODE_ENV || "development";
@@ -11,6 +12,7 @@ const version = fs.readFileSync(root + "/version.txt", { encoding: "utf8", flag:
 const secret = process.env.SESSION_SECRET || "secret";
 
 export default {
+    name,
     port,
     origin,
     env,

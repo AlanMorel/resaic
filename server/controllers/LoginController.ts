@@ -1,6 +1,6 @@
+import RequestWithUser from "@/database/Interfaces";
+import { exception, success } from "@/helpers/ControllerHelper";
 import { Response } from "express";
-import RequestWithUser from "../database/interfaces";
-import { exception, success } from "../helpers/ControllerHelper";
 
 const DAY = 1000 * 60 * 60 * 24;
 

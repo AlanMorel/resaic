@@ -1,16 +1,15 @@
-import compression from "compression";
+import handlebars from "@/core/Handlebars";
+import passport from "@/core/Passport";
+import router from "@/core/Router";
+import staticAssets from "@/core/Static";
+import Database from "@/database/Database";
 import connectSessionSequelize from "connect-session-sequelize";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
 import session from "express-session";
 import helmet from "helmet";
-import config from "../config";
-import Database from "../database/database";
-import handlebars from "./handlebars";
-import passport from "./passport";
-import router from "./router";
-import staticAssets from "./static";
+import Config from "../Config";
 
 const SequelizeStore = connectSessionSequelize(session.Store);
 const store = new SequelizeStore({
@@ -21,7 +20,6 @@ store.sync();
 const app = express();
 app.use(cookieParser());
 app.use(cors());
-app.use(compression());
 app.use(
     helmet({
         contentSecurityPolicy: false
@@ -29,7 +27,7 @@ app.use(
 );
 app.use(
     session({
-        secret: config.secret,
+        secret: Config.secret,
         resave: false,
         saveUninitialized: false,
         store: store
@@ -43,6 +41,6 @@ router(app);
 
 Database.sync();
 
-app.listen(config.port);
+app.listen(Config.port);
 
-console.log(`Resaic v${config.version} is running at ${config.origin} in ${config.env} mode`);
+console.log(`${Config.name} v${Config.version} is running at ${Config.origin} in ${Config.env} mode`);

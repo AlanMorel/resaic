@@ -1,7 +1,7 @@
+import { accept, isForbiddenUsername, reject } from "@/helpers/PolicyHelper";
 import { NextFunction, Request, Response } from "express";
 import Joi from "joi";
 import ComplexityObject, { ComplexityOptions } from "joi-password-complexity";
-import { accept, isForbiddenUsername, reject } from "../helpers/PolicyHelper";
 
 export default async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     if (isForbiddenUsername(req.body.username)) {
@@ -20,8 +20,14 @@ export default async (req: Request, res: Response, next: NextFunction): Promise<
     };
 
     const schema = Joi.object({
-        username: Joi.string().alphanum().min(4).required(),
-        email: Joi.string().email().min(5).required(),
+        username: Joi.string()
+            .alphanum()
+            .min(4)
+            .required(),
+        email: Joi.string()
+            .email()
+            .min(5)
+            .required(),
         password: ComplexityObject(passwordComplexityOptions)
     });
 
