@@ -23,7 +23,7 @@ $ yarn install
 2. Create a `.env` file, also at the root of the project. Here are example settings:
 
 ```
-PORT=3000
+PORT=8083
 NODE_ENV=development
 SESSION_SECRET=secret
 
@@ -47,4 +47,4 @@ yarn server
 yarn build-dev
 ```
 
-6. Visit `http://localhost:3000` to see the app running.
+6. Visit `http://localhost:8083` to see the app running.

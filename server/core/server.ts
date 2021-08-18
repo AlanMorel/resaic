@@ -1,4 +1,3 @@
-import bodyParser from "body-parser";
 import compression from "compression";
 import connectSessionSequelize from "connect-session-sequelize";
 import cookieParser from "cookie-parser";
@@ -21,13 +20,12 @@ store.sync();
 
 const app = express();
 app.use(cookieParser());
-app.use(bodyParser.json());
 app.use(cors());
 app.use(compression());
 app.use(
     helmet({
         contentSecurityPolicy: false
-    })
+    }) as express.RequestHandler
 );
 app.use(
     session({
