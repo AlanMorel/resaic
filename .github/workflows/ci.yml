@@ -16,9 +16,5 @@ jobs:
                   password: ${{ secrets.SERVER_PASSWORD }}
                   script: |
                       cd ${{ secrets.PROJECT_PATH }}
-                      git pull
-                      export NVM_DIR=~/.nvm
-                      source ~/.nvm/nvm.sh  
-                      npm run build-server
-                      npm run build-prod
-                      ${{ secrets.RESTART_SERVER }}
+                      chmod +x ./deploy.sh
+                      ./deploy.sh
