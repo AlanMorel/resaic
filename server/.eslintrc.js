@@ -7,7 +7,8 @@ module.exports = {
     extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:security/recommended"
     ],
     rules: {
         "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
@@ -18,5 +19,5 @@ module.exports = {
         quotes: 2,
         "no-trailing-spaces": "error"
     },
-    plugins: ["@typescript-eslint"]
+    plugins: ["@typescript-eslint", "security"]
 };

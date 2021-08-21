@@ -2,17 +2,15 @@ FROM node:alpine as base
 
 WORKDIR /user/app
 
-RUN npm install --global pm2
+RUN npm install pm2@latest --global
 
 COPY package.json yarn.lock ./
 
-RUN yarn install
+RUN rm -rf node_modules && yarn install --frozen-lockfile && yarn cache clean --force
 
 COPY . .
 
-RUN yarn build-all
-
-RUN cp .docker.env .env
+RUN yarn build-all && cp .docker.env .env
 
 CMD ["yarn", "start"]
 
