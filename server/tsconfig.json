@@ -19,7 +19,7 @@
             "@/*": [
                 "./*"
             ]
-         },
+         }
     },
     "files": ["./core/Server.ts"],
     "include": [
@@ -29,5 +29,5 @@
     "ts-node": {
         "require": ["tsconfig-paths/register"]
     }
-  }
+}
   

@@ -1,3 +1,4 @@
+import Config from "@/Config";
 import handlebars from "@/core/Handlebars";
 import passport from "@/core/Passport";
 import router from "@/core/Router";
@@ -9,7 +10,6 @@ import cors from "cors";
 import express from "express";
 import session from "express-session";
 import helmet from "helmet";
-import Config from "../Config";
 
 const SequelizeStore = connectSessionSequelize(session.Store);
 const store = new SequelizeStore({
