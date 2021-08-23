@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "ESNext",
         "module": "commonjs",
         "outDir": "../dist/server",
         "strict": true,
@@ -12,22 +12,30 @@
         "allowSyntheticDefaultImports": true,
         "resolveJsonModule": true,
         "removeComments": true,
-        "typeRoots": ["node_modules/@types"],
+        "typeRoots": [
+            "node_modules/@types"
+        ],
         "sourceMap": true,
         "baseUrl": ".",
         "paths": {
             "@/*": [
                 "./*"
             ]
-         }
+        }
     },
-    "files": ["./core/Server.ts"],
-    "include": [
-      "./**/*.ts"
+    "files": [
+        "./core/Server.ts"
     ],
-    "exclude": ["node_modules", "dist"],
+    "include": [
+        "./**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ],
     "ts-node": {
-        "require": ["tsconfig-paths/register"]
+        "require": [
+            "tsconfig-paths/register"
+        ]
     }
 }
-  
