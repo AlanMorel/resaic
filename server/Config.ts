@@ -3,12 +3,28 @@ import fs from "fs";
 
 dotenv.config();
 
+const getRoot = (): string => {
+    const root = __dirname.split("dist")[0].split("server")[0];
+    root.endsWith("/") ? root.slice(0, -1) : root;
+    return root;
+};
+
+const getVersion = (): number => {
+    const path = getRoot() + "/version.txt";
+    if (!fs.existsSync(path)) {
+        console.log("Please create ./version.txt file");
+        return 0;
+    }
+    const contents = fs.readFileSync(path, { encoding: "utf8", flag: "r" });
+    return parseInt(contents);
+};
+
 const name = "Resaic";
 const port = parseInt(process.env.PORT || "8083");
 const origin = process.env.ORIGIN || "http://localhost:" + port;
 const env = process.env.NODE_ENV || "development";
-const root = __dirname.split("dist")[0].split("server")[0];
-const version = fs.readFileSync(root + "version.txt");
+const root = getRoot();
+const version = getVersion();
 const secret = process.env.SESSION_SECRET || "secret";
 
 export default {
