@@ -2,6 +2,7 @@ import Config from "@/Config";
 import handlebars from "@/core/Handlebars";
 import passport from "@/core/Passport";
 import router from "@/core/Router";
+import SignalHandler from "@/core/SignalHandler";
 import staticAssets from "@/core/Static";
 import Database from "@/database/Database";
 import connectSessionSequelize from "connect-session-sequelize";
@@ -41,6 +42,8 @@ router(app);
 
 Database.sync();
 
-app.listen(Config.port);
+const server = app.listen(Config.port, "0.0.0.0", () => {
+    console.log(`${Config.name} v${Config.version} is running at ${Config.origin} in ${Config.env} mode`);
+});
 
-console.log(`${Config.name} v${Config.version} is running at ${Config.origin} in ${Config.env} mode`);
+SignalHandler(server);
