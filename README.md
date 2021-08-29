@@ -20,7 +20,7 @@ $ npm install yarn -g
 $ yarn install
 ```
 
-2. Create a `.env` file, also at the root of the project. Here are example settings:
+2. Create a `.env` and `.env.docker` file, also at the root of the project. Here are example settings:
 
 ```
 PORT=8083
