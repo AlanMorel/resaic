@@ -39,7 +39,7 @@ export class Logger {
     }
 
     private static writeToFile(filename: string, message: string): void {
-        fs.appendFile(Config.root + "/logs/" + filename + ".txt", message + "\r\n", error => {
+        fs.appendFile(Config.root + "/logs/" + filename + ".log", message + "\r\n", error => {
             if (error) {
                 throw error;
             }
