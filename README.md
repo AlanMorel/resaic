@@ -34,18 +34,24 @@ DATABASE_PASSWORD=
 DATABASE_TABLE=resaic
 ```
 
-3. Create a new MySQL table with the name specified.
+3. Create a folder called `logs` at the root:
 
-4. Run the server by running this command:
+```
+mkdir logs
+```
+
+4. Create a new MySQL table with the name specified.
+
+5. Run the server by running this command:
 
 ```
 yarn server
 ```
 
-5. In a seperate terminal, build the app by running this command:
+6. In a seperate terminal, build the app by running this command:
 
 ```
 yarn build-dev
 ```
 
-6. Visit `http://localhost:8083` to see the app running.
+7. Visit `http://localhost:8083` to see the app running.
