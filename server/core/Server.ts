@@ -5,6 +5,7 @@ import router from "@/core/Router";
 import SignalHandler from "@/core/SignalHandler";
 import staticAssets from "@/core/Static";
 import Database from "@/database/Database";
+import { Logger } from "@/tools/Logger";
 import connectSessionSequelize from "connect-session-sequelize";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -43,7 +44,7 @@ router(app);
 Database.sync();
 
 const server = app.listen(Config.port, "0.0.0.0", () => {
-    console.log(`${Config.name} v${Config.version} is running at ${Config.origin} in ${Config.env} mode`);
+    Logger.log(`${Config.name} v${Config.version} is running at ${Config.origin} in ${Config.env} mode`);
 });
 
 SignalHandler(server);
