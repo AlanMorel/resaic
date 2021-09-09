@@ -13,7 +13,7 @@ services:
                 ENV: ${NODE_ENV}
         environment:
             DOCKER: "true"
-            DATABASE_HOST: "host.docker.internal"
+            DATABASE_HOST: "mysql"
         volumes:
             - "./logs:/app/logs"
         expose:
