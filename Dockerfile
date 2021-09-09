@@ -2,7 +2,7 @@ FROM node:alpine as base
 
 ARG ENV
 
-WORKDIR /user/app
+WORKDIR /app
 
 COPY package.json yarn.lock ./
 
