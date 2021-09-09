@@ -1,8 +1,6 @@
 # Resaic
 
-## Setup
-
-1. Install node, npm, clone this repository, then install the dependencies
+Install node, npm, clone this repository, then install the dependencies
 
 ```sh
 $ git clone https://github.com/AlanMorel/resaic resaic
@@ -20,38 +18,41 @@ $ npm install yarn -g
 $ yarn install
 ```
 
-2. Create a `.env` and `.env.docker` file, also at the root of the project. Here are example settings:
+Create a `.env` file
 
 ```
-PORT=8083
 NODE_ENV=development
-SESSION_SECRET=secret
+PORT=8083
+ORIGIN=http://localhost:8083
+DOCKER_ORIGIN=http://localhost:8083
 
 DATABASE_HOST=localhost
 DATABASE_PORT=3306
 DATABASE_USERNAME=root
 DATABASE_PASSWORD=
 DATABASE_TABLE=resaic
+
+SESSION_SECRET=secret
 ```
 
-3. Create a folder called `logs` at the root:
+Create a folder called `logs` at the root:
 
 ```
 mkdir logs
 ```
 
-4. Create a new MySQL table with the name specified.
+Create a new MySQL table with the name specified.
 
-5. Run the server by running this command:
+Run the server by running this command:
 
 ```
 yarn server
 ```
 
-6. In a seperate terminal, build the app by running this command:
+In a seperate terminal, build the app by running this command:
 
 ```
 yarn build-dev
 ```
 
-7. Visit `http://localhost:8083` to see the app running.
+Visit `http://localhost:8083` to see the app running.

@@ -4,15 +4,18 @@ services:
     resaic:
         container_name: resaic
         image: resaic
+        restart: always
         build:
             context: .
             dockerfile: Dockerfile
             target: base
+            args:
+                ENV: ${NODE_ENV}
+        environment:
+            DOCKER: "true"
+            DATABASE_HOST: "host.docker.internal"
         volumes:
             - "./logs:/app/logs"
-        env_file:
-            - ./.env.docker
-        restart: always
         expose:
             - "${PORT}"
         networks:
