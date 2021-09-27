@@ -21,6 +21,7 @@ $ yarn install
 Create a `.env` file
 
 ```
+VERSION=0
 NODE_ENV=development
 PORT=8083
 ORIGIN=http://localhost:8083
