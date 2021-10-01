@@ -3,24 +3,24 @@
 Install node, npm, clone this repository, then install the dependencies
 
 ```sh
-$ git clone https://github.com/AlanMorel/resaic resaic
+git clone https://github.com/AlanMorel/resaic resaic
 ```
 
 ```sh
-$ cd resaic
+cd resaic
 ```
 
 ```sh
-$ npm install yarn -g
+npm install yarn -g
 ```
 
 ```sh
-$ yarn install
+yarn install
 ```
 
 Create a `.env` file
 
-```
+```sh
 VERSION=0
 NODE_ENV=development
 PORT=8083
@@ -38,7 +38,7 @@ SESSION_SECRET=secret
 
 Create a folder called `logs` at the root:
 
-```
+```sh
 mkdir logs
 ```
 
@@ -46,13 +46,13 @@ Create a new MySQL table with the name specified.
 
 Run the server by running this command:
 
-```
+```sh
 yarn server
 ```
 
 In a seperate terminal, build the app by running this command:
 
-```
+```sh
 yarn build-dev
 ```
 
