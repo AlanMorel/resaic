@@ -10,7 +10,7 @@
             </div>
             <div class="footer__right">
                 <ul class="footer__links">
-                    <li v-for="link in footerLinks" class="footer__link" :key="link.link">
+                    <li v-for="link in footerLinks" :key="link.link" class="footer__link">
                         <router-link :to="'/' + link.link">
                             {{ link.text }}
                         </router-link>

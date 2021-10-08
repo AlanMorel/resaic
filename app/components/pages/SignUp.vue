@@ -9,22 +9,22 @@
             <form @submit.prevent="signup">
                 <FormInput for-text="username" placeholder="Username">
                     <input
+                        v-model="username"
                         type="text"
                         name="username"
-                        v-model="username"
                         autocomplete="username"
                         autocorrect="off"
                         placeholder="resaic"
-                        @blur="usernameCheck()"
                         required
+                        @blur="usernameCheck()"
                     />
                 </FormInput>
                 <ValidationList v-if="username" :errors="usernameErrors" :successes="usernameSuccesses" />
                 <FormInput for-text="email" placeholder="Email">
                     <input
+                        v-model="email"
                         type="text"
                         name="email"
-                        v-model="email"
                         autocomplete="email"
                         autocorrect="email"
                         placeholder="resaic@resaic.co"
@@ -35,9 +35,9 @@
                 <FormInput for-text="password" placeholder="Password">
                     <IconToggler v-model="showPassword" on="EyeClosed" off="EyeOpened" />
                     <input
+                        v-model="password"
                         :type="showPassword ? 'text' : 'password'"
                         name="password"
-                        v-model="password"
                         autocomplete="password"
                         placeholder="********"
                         required
@@ -46,13 +46,13 @@
                 <StrengthIndicator :strength="passwordStrength" />
                 <ValidationList v-if="password" :errors="validatePassword(password)" />
                 <div class="sign-up__legal-agreement">
-                    <input type="checkbox" v-model="legalAgreement" />
+                    <input v-model="legalAgreement" type="checkbox" />
                     <span>
                         I agree to the Resaic <router-link to="/privacy-policy">Privacy Policy</router-link> and
                         <router-link to="/terms-of-service">Terms of Service</router-link>.
                     </span>
                 </div>
-                <div class="centered-page__error" v-if="error">
+                <div v-if="error" class="centered-page__error">
                     {{ error }}
                 </div>
                 <div class="centered-page__button-container">

@@ -9,9 +9,9 @@
             <form @submit.prevent="login">
                 <FormInput for-text="identifier" placeholder="Username or Email">
                     <input
+                        v-model="identifier"
                         type="text"
                         name="identifier"
-                        v-model="identifier"
                         autocorrect="off"
                         placeholder="resaic"
                         required
@@ -19,19 +19,19 @@
                 </FormInput>
                 <FormInput for-text="password" placeholder="Password">
                     <input
+                        v-model="password"
                         type="password"
                         name="password"
-                        v-model="password"
                         autocomplete="password"
                         placeholder="********"
                         required
                     />
                 </FormInput>
                 <div class="login__remember-me">
-                    <input type="checkbox" v-model="rememberMe" />
+                    <input v-model="rememberMe" type="checkbox" />
                     <span>Remember Me</span>
                 </div>
-                <div class="centered-page__error" v-if="error">
+                <div v-if="error" class="centered-page__error">
                     {{ error }}
                 </div>
                 <div class="centered-page__button-container">

@@ -7,8 +7,8 @@
             <form method="POST" class="contact-us__form" @submit.prevent="sendMessage">
                 <FormInput for-text="name" placeholder="Name">
                     <input
-                        type="text"
                         v-model="name"
+                        type="text"
                         name="name"
                         autocomplete="name"
                         class="contact-us__name"
@@ -18,8 +18,8 @@
                 </FormInput>
                 <FormInput for-text="email" placeholder="Email">
                     <input
-                        type="email"
                         v-model="email"
+                        type="email"
                         name="email"
                         autocomplete="email"
                         class="contact-us__email"
@@ -34,7 +34,7 @@
                         class="contact-us__message"
                         placeholder="Message"
                         required
-                    ></textarea>
+                    />
                 </FormInput>
                 <ProgressButton text="Send Message" :progress="progress" />
             </form>

@@ -1,25 +1,27 @@
 <template>
     <div class="settings">
         <div class="settings__inner">
-            <h1 class="settings__header">Settings</h1>
+            <h1 class="settings__header">
+                Settings
+            </h1>
             <form @submit.prevent="updateSettings">
                 <FormInput for-text="username" placeholder="Username" :dynamic="false">
                     <input
+                        v-model="username"
                         type="text"
                         name="username"
-                        v-model="username"
                         autocomplete="username"
                         autocorrect="off"
                         placeholder="resaic"
-                        @blur="usernameCheck()"
                         disabled
+                        @blur="usernameCheck()"
                     />
                 </FormInput>
                 <FormInput for-text="email" placeholder="Email" :dynamic="false">
                     <input
+                        v-model="email"
                         type="text"
                         name="email"
-                        v-model="email"
                         autocomplete="email"
                         autocorrect="email"
                         placeholder="resaic@resaic.co"
@@ -27,13 +29,13 @@
                     />
                 </FormInput>
                 <FormInput for-text="bio" placeholder="Bio" :dynamic="false">
-                    <textarea v-model="bio" class="settings__bio" placeholder="I'm an awesome person!"></textarea>
+                    <textarea v-model="bio" class="settings__bio" placeholder="I'm an awesome person!" />
                 </FormInput>
                 <FormInput for-text="city" placeholder="City" :dynamic="false">
                     <input
+                        v-model="city"
                         type="text"
                         name="city"
-                        v-model="city"
                         autocomplete="city"
                         autocorrect="city"
                         placeholder="New York"
@@ -41,9 +43,9 @@
                 </FormInput>
                 <FormInput for-text="country" placeholder="Country" :dynamic="false">
                     <input
+                        v-model="country"
                         type="text"
                         name="country"
-                        v-model="country"
                         autocomplete="country"
                         autocorrect="country"
                         placeholder="United States"

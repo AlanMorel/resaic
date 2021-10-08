@@ -1,7 +1,9 @@
 <template>
     <li class="log">
         <h2 class="log__version">Version {{ version }}</h2>
-        <h3 class="log__date">{{ date }}</h3>
+        <h3 class="log__date">
+            {{ date }}
+        </h3>
         <div class="log__contents">
             <slot />
         </div>

@@ -14,10 +14,12 @@
         },
         props: {
             errors: {
-                type: Array
+                type: Array,
+                default: () => []
             },
             successes: {
-                type: Array
+                type: Array,
+                default: () => []
             }
         }
     });
