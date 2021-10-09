@@ -8,12 +8,10 @@ export interface ContactAttributes {
     ipAddress: string;
 }
 
-export interface ContactModel extends Model<ContactAttributes>, ContactAttributes {
-
-}
+export interface ContactModel extends Model<ContactAttributes>, ContactAttributes {}
 
 export type ContactType = typeof Model & {
-    new(values?: any, options?: BuildOptions): ContactModel;
+    new (values?: any, options?: BuildOptions): ContactModel;
 };
 
 export function ContactFactory(sequelize: Sequelize): ContactType {

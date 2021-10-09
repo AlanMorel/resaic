@@ -4,12 +4,8 @@
             <h1>404 - Page Not Found</h1>
         </Hero>
         <div class="not-found__content">
-            <div class="not-found__message">
-                The page you requested could not be found.
-            </div>
-            <router-link to="/" class="not-found__button">
-                Go Home
-            </router-link>
+            <div class="not-found__message">The page you requested could not be found.</div>
+            <router-link to="/" class="not-found__button"> Go Home </router-link>
         </div>
     </div>
 </template>

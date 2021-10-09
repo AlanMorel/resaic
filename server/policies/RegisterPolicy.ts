@@ -20,14 +20,8 @@ export default async (req: Request, res: Response, next: NextFunction): Promise<
     };
 
     const schema = Joi.object({
-        username: Joi.string()
-            .alphanum()
-            .min(4)
-            .required(),
-        email: Joi.string()
-            .email()
-            .min(5)
-            .required(),
+        username: Joi.string().alphanum().min(4).required(),
+        email: Joi.string().email().min(5).required(),
         password: ComplexityObject(passwordComplexityOptions)
     });
 

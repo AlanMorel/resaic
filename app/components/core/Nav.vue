@@ -8,9 +8,7 @@
         <ul class="nav__menu">
             <template v-if="user.loggedIn">
                 <li class="nav__item">
-                    <router-link to="/settings" class="nav__link">
-                        Settings
-                    </router-link>
+                    <router-link to="/settings" class="nav__link">Settings</router-link>
                 </li>
                 <li class="nav__item">
                     <span class="nav__link" @click="logout">Log out</span>
@@ -18,14 +16,10 @@
             </template>
             <template v-else>
                 <li class="nav__item">
-                    <router-link to="/login" class="nav__link">
-                        Login
-                    </router-link>
+                    <router-link to="/login" class="nav__link">Login</router-link>
                 </li>
                 <li class="nav__item">
-                    <router-link to="/signup" class="nav__link">
-                        Sign Up
-                    </router-link>
+                    <router-link to="/signup" class="nav__link">Sign Up</router-link>
                 </li>
             </template>
         </ul>

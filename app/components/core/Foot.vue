@@ -18,9 +18,7 @@
                 </ul>
             </div>
         </div>
-        <div class="footer__copyright">
-            Copyright © 2020 - 2021 Resaic. All rights reserved.
-        </div>
+        <div class="footer__copyright">Copyright © 2020 - 2021 Resaic. All rights reserved.</div>
     </footer>
 </template>
 

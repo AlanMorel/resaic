@@ -1,9 +1,7 @@
 <template>
     <div class="settings">
         <div class="settings__inner">
-            <h1 class="settings__header">
-                Settings
-            </h1>
+            <h1 class="settings__header">Settings</h1>
             <form @submit.prevent="updateSettings">
                 <FormInput for-text="username" placeholder="Username" :dynamic="false">
                     <input

@@ -1,9 +1,7 @@
 <template>
     <CenteredPage class="sign-up">
         <template #prompt>
-            <span>
-                Join the fastest growing community of photographers in the world
-            </span>
+            <span> Join the fastest growing community of photographers in the world </span>
         </template>
         <template #content>
             <form @submit.prevent="signup">
@@ -61,9 +59,7 @@
             </form>
         </template>
         <template #footer>
-            <router-link to="/login">
-                Already have an account?
-            </router-link>
+            <router-link to="/login"> Already have an account? </router-link>
         </template>
         <template #background>
             <img
