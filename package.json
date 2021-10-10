@@ -40,7 +40,7 @@
         "mysql2": "^2.3.0",
         "passport": "^0.5.0",
         "passport-local": "^1.0.0",
-        "sequelize": "^6.6.5",
+        "sequelize": "^6.7.0",
         "vue": "^3.2.0-beta.8",
         "vue-router": "^4.0.0-rc.6",
         "vuex": "^4.0.0-rc.2"
@@ -61,7 +61,7 @@
         "@types/sequelize": "^4.28.10",
         "@types/validator": "^13.6.3",
         "@typescript-eslint/eslint-plugin": "^5.0.0-alpha.48",
-        "@typescript-eslint/parser": "^5.0.0-alpha.45",
+        "@typescript-eslint/parser": "^5.0.0-alpha.48",
         "@vue/cli-plugin-babel": "^5.0.0-beta.5",
         "@vue/cli-plugin-eslint": "^5.0.0-beta.5",
         "@vue/cli-plugin-router": "^5.0.0-beta.5",
