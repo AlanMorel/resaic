@@ -1,4 +1,5 @@
 module.exports = {
+    root: true,
     env: {
         node: true,
         es2021: true
@@ -31,5 +32,6 @@ module.exports = {
         "no-undef": 1,
         "no-prototype-builtins": 1,
         "prettier/prettier": ["error"]
-    }
+    },
+    ignorePatterns: ["**/*.ejs"]
 };

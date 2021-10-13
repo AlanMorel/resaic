@@ -23,7 +23,13 @@
             "@/*": [
                 "./*"
             ]
-        }
+        },
+        "lib": [
+            "esnext",
+            "dom",
+            "dom.iterable",
+            "scripthost"
+        ]
     },
     "files": [
         "./core/Server.ts"
