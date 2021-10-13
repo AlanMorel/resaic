@@ -1,9 +1,10 @@
 module.exports = {
-    root: true,
     env: {
-        node: true
+        node: true,
+        es2021: true
     },
     parser: "@typescript-eslint/parser",
+    plugins: ["@typescript-eslint", "security", "prettier"],
     extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -24,10 +25,11 @@ module.exports = {
             }
         ],
         semi: 2,
-        quotes: 2,
         "no-trailing-spaces": "error",
         "no-case-declarations": "off",
-        "eol-last": "error"
-    },
-    plugins: ["@typescript-eslint", "security"]
+        "eol-last": "error",
+        "no-undef": 1,
+        "no-prototype-builtins": 1,
+        "prettier/prettier": ["error"]
+    }
 };
