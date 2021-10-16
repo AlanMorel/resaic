@@ -36,7 +36,7 @@ DATABASE_TABLE=resaic
 SESSION_SECRET=secret
 ```
 
-Create a folder called `logs` at the root:
+Create a folder called `logs` at the root
 
 ```sh
 mkdir logs
@@ -44,13 +44,13 @@ mkdir logs
 
 Create a new MySQL table with the name specified.
 
-Run the server by running this command:
+Run the server
 
 ```sh
 yarn server
 ```
 
-In a seperate terminal, build the app by running this command:
+In a seperate terminal, build the app
 
 ```sh
 yarn build-dev
