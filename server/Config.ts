@@ -25,8 +25,6 @@ const version = parseInt(process.env.VERSION || "0");
 const secret = process.env.SESSION_SECRET || "secret";
 const origin = getOrigin();
 
-console.log(origin);
-
 export default {
     name,
     port,
