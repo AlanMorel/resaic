@@ -1,14 +1,15 @@
+import Config from "@/Config";
 import { Sequelize } from "sequelize";
 import { ContactFactory } from "./models/Contact";
 import { UserFactory } from "./models/User";
 
 const Database = new Sequelize({
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE_TABLE,
-    port: parseInt(process.env.DATABASE_PORT ?? "3306"),
     dialect: "mysql",
+    host: Config.database.host,
+    port: Config.database.port,
+    username: Config.database.username,
+    password: Config.database.passsword,
+    database: Config.database.database,
     pool: {
         max: 5,
         min: 0,

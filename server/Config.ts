@@ -25,6 +25,14 @@ const version = parseInt(process.env.VERSION || "0");
 const secret = process.env.SESSION_SECRET || "secret";
 const origin = getOrigin();
 
+const database = {
+    host: process.env.DATABASE_HOST || "localhost",
+    port: parseInt(process.env.DATABASE_PORT || "3306"),
+    username: process.env.DATABASE_USERNAME || "root",
+    passsword: process.env.DATABASE_PASSWORD || "",
+    database: process.env.DATABASE_TABLE || ""
+};
+
 export default {
     name,
     port,
@@ -32,5 +40,6 @@ export default {
     env,
     root,
     version,
-    secret
+    secret,
+    database
 };

@@ -12,7 +12,7 @@ RUN npx browserslist@latest --update-db && rm -rf node_modules && yarn install -
 
 COPY . .
 
-RUN yarn build-${ENV} && yarn build-server
+RUN yarn build:${ENV} && yarn build:server
 
 CMD ["node", "./dist/server/core/Server.js"]
 
