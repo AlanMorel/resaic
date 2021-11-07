@@ -26,6 +26,7 @@ NODE_ENV=development
 PORT=8083
 ORIGIN=http://localhost:8083
 DOCKER_ORIGIN=http://localhost:8083
+TZ=America/New_York
 
 DATABASE_HOST=localhost
 DATABASE_PORT=3306

@@ -11,8 +11,7 @@ module.exports = {
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:security/recommended",
-        "@vue/prettier",
-        "@vue/prettier/@typescript-eslint"
+        "plugin:prettier/recommended"
     ],
     plugins: ["vue", "@typescript-eslint", "security", "prettier"],
     parser: "vue-eslint-parser",
@@ -42,14 +41,8 @@ module.exports = {
         "vue/max-attributes-per-line": [
             "warn",
             {
-                singleline: {
-                    max: 6,
-                    allowFirstLine: true
-                },
-                multiline: {
-                    max: 6,
-                    allowFirstLine: false
-                }
+                singleline: 6,
+                multiline: 6
             }
         ],
         "vue/html-self-closing": [
