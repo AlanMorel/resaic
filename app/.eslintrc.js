@@ -57,6 +57,14 @@ module.exports = {
                 math: "always"
             }
         ],
+        "vue/v-on-event-hyphenation": [
+            1,
+            "always",
+            {
+                autofix: true
+            }
+        ],
+        "vue/multi-word-component-names": ["off"],
         "vue/no-v-html": "off",
         "no-undef": 1,
         "no-prototype-builtins": 1,

@@ -16,7 +16,7 @@
       ],
       "paths": {
         "@/*": [
-          "app/*"
+          "./app/*"
         ]
       },
       "lib": [
@@ -27,12 +27,12 @@
       ]
     },
     "include": [
-      "app/**/*.ts",
-      "app/**/*.vue"
+      "./app/**/*.ts",
+      "./app/**/*.vue"
     ],
     "exclude": [
-      "node_modules",
-      "dist"
+      "./node_modules",
+      "./dist"
     ]
 }
   
