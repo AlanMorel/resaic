@@ -15,7 +15,7 @@ const metaInfo = {
     image: "image"
 };
 
-const styles = Config.env === "production" ? fs.readFileSync(Config.root + "/dist/production/css/index.css") : "";
+const styles = Config.env === "production" ? fs.readFileSync(`${Config.root}/dist/production/css/index.css`) : "";
 
 export default (req: RequestWithUser, res: Response): void => {
     const user = req.user && req.isAuthenticated() ? req.user.simplify() : null;
