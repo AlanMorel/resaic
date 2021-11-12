@@ -3,7 +3,7 @@
 Install node, npm, clone this repository, then install the dependencies
 
 ```sh
-git clone https://github.com/AlanMorel/resaic resaic
+git clone https://github.com/AlanMorel/resaic
 ```
 
 ```sh
