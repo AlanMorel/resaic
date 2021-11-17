@@ -1,5 +1,5 @@
 import Config from "@/Config";
-import handlebars from "@/core/Handlebars";
+import EJS from "@/core/EJS";
 import passport from "@/core/Passport";
 import router from "@/core/Router";
 import SignalHandler from "@/core/SignalHandler";
@@ -39,7 +39,7 @@ app.use(
 
 staticAssets(app);
 passport(app);
-handlebars(app);
+EJS(app);
 router(app);
 
 Database.sync();
