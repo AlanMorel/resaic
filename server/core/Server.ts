@@ -20,6 +20,7 @@ const store = new SequelizeStore({
 store.sync();
 
 const app = express();
+app.enable("trust proxy");
 
 app.use(cookieParser());
 app.use(cors());
