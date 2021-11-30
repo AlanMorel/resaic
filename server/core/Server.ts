@@ -5,6 +5,7 @@ import router from "@/core/Router";
 import SignalHandler from "@/core/SignalHandler";
 import staticAssets from "@/core/Static";
 import Database from "@/database/Database";
+import ErrorHandler from "@/helpers/ErrorHandler";
 import { Logger } from "@/tools/Logger";
 import connectSessionSequelize from "connect-session-sequelize";
 import cookieParser from "cookie-parser";
@@ -42,6 +43,7 @@ staticAssets(app);
 passport(app);
 EJS(app);
 router(app);
+app.use(ErrorHandler);
 
 Database.sync();
 
